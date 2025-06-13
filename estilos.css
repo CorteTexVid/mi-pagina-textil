@@ -28,7 +28,7 @@ header {
 }
 
 .logo {
-  font-size: 1.8rem;
+  font-size: 2.5rem; /* aumentado de 1.8rem */
   font-weight: 700;
   margin-left: 1rem;
 }
@@ -46,7 +46,8 @@ nav {
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.1rem; /* agregado tamaño de fuente */
   transition: color 0.3s;
 }
 
@@ -55,7 +56,9 @@ nav {
 }
 
 .hero {
-  background: url('https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+  background: 
+    linear-gradient(rgba(0, 64, 128, 0.7), rgba(0, 64, 128, 0.7)),
+    url('https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
   color: white;
   padding: 6rem 0;
   text-align: center;
