@@ -39,16 +39,14 @@
     .user {
       background-color: #003366;
       color: #fff;
-      align-self: flex-end;
-      text-align: right;
       float: right;
+      clear: both;
     }
     .bot {
       background-color: #e0e0e0;
       color: #000;
-      align-self: flex-start;
-      text-align: left;
       float: left;
+      clear: both;
     }
     .chat-input {
       width: 100%;
@@ -75,95 +73,93 @@
 </head>
 <body>
 
-  <header>
-    <div class="logo">CorteTexVid</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html#inicio">Inicio</a></li>
-        <li><a href="index.html#nosotros">Nosotros</a></li>
-        <li><a href="index.html#servicios">Servicios</a></li>
-        <li><a href="faq.html" class="active">FAQ</a></li>
-        <li><a href="index.html#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <div class="logo">CorteTexVid</div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html#inicio">Inicio</a></li>
+      <li><a href="index.html#nosotros">Nosotros</a></li>
+      <li><a href="index.html#servicios">Servicios</a></li>
+      <li><a href="faq.html" class="active">FAQ</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <section class="chatbot" id="chatbot">
-    <h2>¿Tienes dudas? ¡Nosotros te respondemos!</h2>
-    <div class="chat-window" id="chatVentana"></div>
-    <div class="chat-input">
-      <input type="text" id="userQuestion" placeholder="Escribe tu pregunta...">
-      <button onclick="responderPregunta()">Preguntar</button>
+<section class="chatbot" id="chatbot">
+  <h2>¿Tienes dudas? ¡Nosotros te respondemos!</h2>
+  <div class="chat-window" id="chatVentana"></div>
+  <div class="chat-input">
+    <input type="text" id="userQuestion" placeholder="Escribe tu pregunta...">
+    <button onclick="responderPregunta()">Preguntar</button>
+  </div>
+
+  <div style="margin-top: 2rem;">
+    <p><strong>Preguntas más comunes:</strong></p>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+      <button class="faq-sugerida">¿Qué tipo de prendas cortáis?</button>
+      <button class="faq-sugerida">¿Cuánto tiempo tardáis en cortar un pedido?</button>
+      <button class="faq-sugerida">¿Puedo enviar mis propias telas?</button>
+      <button class="faq-sugerida">¿Tenéis precios especiales por volumen?</button>
+      <button class="faq-sugerida">¿Puedo pedir solo unas pocas unidades?</button>
+      <button class="faq-sugerida">¿Dónde estáis ubicados?</button>
+      <button class="faq-sugerida">¿Cómo os puedo hacer un pedido?</button>
+      <button class="faq-sugerida">¿Usáis máquinas o es manual?</button>
+      <button class="faq-sugerida">¿Qué precio tiene un bikini o bañador?</button>
+      <button class="faq-sugerida">¿Con qué tipo de telas trabajáis?</button>
     </div>
-  </section>
+  </div>
+</section>
 
-  <script>
-  const respuestas = {
-  "ropa de baño": "Sí, realizamos cortes personalizados para ropa de baño como bikinis y bañadores.",
-  "camisetas": "También cortamos camisetas, pantalones, vestidos, tops, sudaderas, faldas, lencería, pijamas, bodies y mucho más.",
-  "tipo de prendas": "Cortamos todo tipo de prendas: bikinis, bañadores, camisetas, pantalones, vestidos, sudaderas, ropa interior, pijamas, faldas, tops, etc.",
-  "tiempo": "El tiempo de entrega puede ir de 2 días a 2 semanas, dependiendo del pedido.",
-  "telas del cliente": "Sí, trabajamos con las telas que nos envía cada cliente. Tú nos haces llegar el material y nosotros lo cortamos según tu diseño.",
-  "pocas unidades": "Sí, puedes pedir pocas unidades. Los precios varían según la cantidad y el tipo de prenda.",
-  "precio por volumen": "Sí, ofrecemos precios más económicos por volumen. Cuantas más unidades, más ajustado será el precio.",
-  "máquinas": "Utilizamos maquinaria profesional, pero no es un proceso industrial automatizado. Todo el trabajo es preparado y controlado artesanalmente.",
+<script>
+const respuestas = {
+  "prendas": "Cortamos todo tipo de prendas: bikinis, bañadores, camisetas, pantalones, vestidos, sudaderas, ropa interior, pijamas, faldas, tops y más.",
+  "tiempo": "El tiempo de entrega va desde 2 días hasta 2 semanas, según la cantidad del pedido.",
+  "telas": "Sí, trabajamos con las telas que nos envía cada cliente.",
+  "volumen": "Sí, ofrecemos precios especiales por volumen. Cuantas más unidades, mejor tarifa.",
+  "unidades": "Sí, aceptamos pedidos pequeños. Los precios varían según la cantidad.",
   "ubicación": "Estamos en Vidreres, Girona. Nuestra dirección es Carrer Salvador Dalí 19.",
-  "enviar telas": "Sí, puedes enviarnos tus telas. Solo necesitamos que nos contactes por WhatsApp, correo o llamada para organizar el pedido.",
-  "cómo enviar": "Puedes enviarnos tu pedido por WhatsApp al +34 609 565 283, por correo a cortetexvid@gmail.com o llamarnos directamente."
+  "pedido": "Puedes hacer tu pedido por WhatsApp al +34 609 565 283, por correo a cortetexvid@gmail.com o llamarnos directamente.",
+  "maquinas": "Usamos maquinaria profesional, pero el trabajo es totalmente artesanal y personalizado.",
+  "precio bikini": "El precio depende del tipo de prenda y cantidad. Un bañador simple en volumen puede salir desde 1,60€.",
+  "tipo telas": "Trabajamos con tejidos elásticos, lycra, algodón, poliéster, y muchos otros que envíen los clientes."
 };
 
-  document.getElementById("userQuestion").addEventListener("keypress", function (e) {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      responderPregunta();
-    }
-  });
+function responderPregunta() {
+  const entrada = document.getElementById("userQuestion");
+  const texto = entrada.value.trim().toLowerCase();
+  if (!texto) return;
+  agregarBurbuja(entrada.value, "user");
+  entrada.value = "";
 
-  function responderPregunta() {
-    const entrada = document.getElementById("userQuestion");
-    const texto = entrada.value.trim();
-    if (!texto) return;
+  let respuesta = `No tengo una respuesta exacta para eso, pero estaré encantado de ayudarte personalmente. Escríbenos por <a href='https://wa.me/34609565283' target='_blank'>WhatsApp</a> o al correo <a href='mailto:cortetexvid@gmail.com'>cortetexvid@gmail.com</a> y responderemos lo antes posible.`;
 
-    agregarBurbuja(texto, "user");
-    entrada.value = "";
-
-    const textoMin = texto.toLowerCase();
-    let respuesta = `No tengo una respuesta exacta para eso, pero estaré encantado de ayudarte personalmente. Escríbenos por <a href='https://wa.me/34609565283' target='_blank'>WhatsApp</a> o al correo <a href='mailto:cortetexvid@gmail.com'>cortetexvid@gmail.com</a> y responderemos lo antes posible.`;
-
-    if (textoMin.includes("ropa de baño") || textoMin.includes("bañador") || textoMin.includes("bikini")) {
-  respuesta = respuestas["ropa de baño"];
-} else if (textoMin.includes("camiseta") || textoMin.includes("pantalón") || textoMin.includes("vestido") || textoMin.includes("sudadera") || textoMin.includes("ropa interior") || textoMin.includes("falda")) {
-  respuesta = respuestas["tipo de prendas"];
-} else if (textoMin.includes("tiempo") || textoMin.includes("tarda") || textoMin.includes("entrega")) {
-  respuesta = respuestas["tiempo"];
-} else if (textoMin.includes("tela") && textoMin.includes("cliente")) {
-  respuesta = respuestas["telas del cliente"];
-} else if (textoMin.includes("pocas unidades") || textoMin.includes("poco") || textoMin.includes("una sola")) {
-  respuesta = respuestas["pocas unidades"];
-} else if (textoMin.includes("precio por volumen") || textoMin.includes("mucho pedido") || textoMin.includes("precio en cantidad")) {
-  respuesta = respuestas["precio por volumen"];
-} else if (textoMin.includes("máquina") || textoMin.includes("industrial") || textoMin.includes("fábrica")) {
-  respuesta = respuestas["máquinas"];
-} else if (textoMin.includes("dónde estáis") || textoMin.includes("ubicación") || textoMin.includes("dirección")) {
-  respuesta = respuestas["ubicación"];
-} else if (textoMin.includes("enviar tela") || textoMin.includes("puedo enviar") || textoMin.includes("envío tela")) {
-  respuesta = respuestas["enviar telas"];
-} else if (textoMin.includes("cómo enviar") || textoMin.includes("hacer pedido") || textoMin.includes("contacto")) {
-  respuesta = respuestas["cómo enviar"];
-} else if (textoMin.includes("camiseta") || textoMin.includes("pantalón")) {
-      respuesta = respuestas["camisetas"];
-    } else if (textoMin.includes("tiempo") || textoMin.includes("tarda") || textoMin.includes("entrega")) {
-      respuesta = respuestas["tiempo"];
-    } else if (textoMin.includes("artesanal") || textoMin.includes("fábrica") || textoMin.includes("máquina")) {
-      respuesta = respuestas["artesanal"];
-    } else if (textoMin.includes("precio") || textoMin.includes("cuánto cuesta") || textoMin.includes("tarifa") || textoMin.includes("presupuesto")) {
-      respuesta = respuestas["precios"];
-    }
-
-    setTimeout(() => agregarBurbuja(respuesta, "bot"), 500);
+  if (texto.includes("prenda") || texto.includes("camiseta") || texto.includes("pantalón") || texto.includes("vestido") || texto.includes("bikini") || texto.includes("bañador")) {
+    respuesta = respuestas["prendas"];
+  } else if (texto.includes("tiempo") || texto.includes("tardar") || texto.includes("entrega")) {
+    respuesta = respuestas["tiempo"];
+  } else if (texto.includes("tela") || texto.includes("envío de tela")) {
+    respuesta = respuestas["telas"];
+  } else if (texto.includes("volumen") || texto.includes("mayor cantidad") || texto.includes("por unidad")) {
+    respuesta = respuestas["volumen"];
+  } else if (texto.includes("poca cantidad") || texto.includes("pocas unidades") || texto.includes("poco")) {
+    respuesta = respuestas["unidades"];
+  } else if (texto.includes("dónde") || texto.includes("ubicación") || texto.includes("dirección")) {
+    respuesta = respuestas["ubicación"];
+  } else if (texto.includes("pedido") || texto.includes("contactar") || texto.includes("cómo hacer")) {
+    respuesta = respuestas["pedido"];
+  } else if (texto.includes("máquina") || texto.includes("manual") || texto.includes("industrial")) {
+    respuesta = respuestas["maquinas"];
+  } else if (texto.includes("precio") || texto.includes("cuánto cuesta") || texto.includes("cuánto vale")) {
+    respuesta = respuestas["precio bikini"];
+  } else if (texto.includes("tipo de tela") || texto.includes("qué telas") || texto.includes("tejido")) {
+    respuesta = respuestas["tipo telas"];
   }
 
-  function agregarBurbuja(texto, tipo) {
+  setTimeout(() => agregarBurbuja(respuesta, "bot"), 500);
+}
+
+function agregarBurbuja(texto, tipo) {
   const ventana = document.getElementById("chatVentana");
   const burbuja = document.createElement("div");
   burbuja.className = `chat-bubble ${tipo}`;
@@ -172,19 +168,28 @@
   ventana.scrollTop = ventana.scrollHeight;
 }
 
-// Mensaje de bienvenida al cargar
 window.addEventListener("load", () => {
   agregarBurbuja("¡Hola! ¿En qué puedo ayudarte?", "bot");
-});`;
-    burbuja.innerHTML = texto;
-    ventana.appendChild(burbuja);
-    ventana.scrollTop = ventana.scrollHeight;
+});
+
+document.querySelectorAll(".faq-sugerida").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.getElementById("userQuestion").value = btn.textContent;
+    responderPregunta();
+  });
+});
+
+document.getElementById("userQuestion").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    responderPregunta();
   }
+});
 </script>
 
-  <footer>
-    <p>© 2025 CorteTexVid. Todos los derechos reservados.</p>
-  </footer>
+<footer>
+  <p>© 2025 CorteTexVid. Todos los derechos reservados.</p>
+</footer>
 
 </body>
 </html>
