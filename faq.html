@@ -7,37 +7,119 @@
   <link rel="stylesheet" href="estilos.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    .chatbot {
+      padding: 3rem 2rem;
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+    .chatbot h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: #003366;
+    }
+    .chat-window {
+      background: #f1f1f1;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: left;
+      max-height: 400px;
+      overflow-y: auto;
+      margin-bottom: 1rem;
+    }
+    .chat-bubble {
+      max-width: 80%;
+      padding: 0.8rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      display: inline-block;
+      line-height: 1.5;
+    }
+    .user {
+      background-color: #003366;
+      color: #fff;
+      align-self: flex-end;
+      text-align: right;
+      float: right;
+    }
+    .bot {
+      background-color: #e0e0e0;
+      color: #000;
+      align-self: flex-start;
+      text-align: left;
+      float: left;
+    }
+    .chat-input {
+      width: 100%;
+      display: flex;
+      gap: 0.5rem;
+    }
+    .chat-input input {
+      flex: 1;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .chat-input button {
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      border: none;
+      background-color: #ffcc00;
+      color: #003366;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">CorteTexVid</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html#inicio">Inicio</a></li>
-        <li><a href="index.html#nosotros">Nosotros</a></li>
-        <li><a href="index.html#servicios">Servicios</a></li>
-        <li><a href="faq.html" class="active">FAQ</a></li>
-        <li><a href="index.html#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="faq" id="faq">
-    <h2>Preguntas Frecuentes</h2>
-    <div class="faq-item">
-      <h3>¿El trabajo es artesanal o industrial?</h3>
-      <p>Utilizamos maquinaria especializada para cortes precisos, pero el proceso no es automatizado como en una fábrica. Cada pedido se prepara con atención personalizada, combinando técnica artesanal con herramientas profesionales.</p>
-    </div>
-    <div class="faq-item">
-      <h3>¿Trabajan solo con ropa de baño?</h3>
-      <p>No, también cortamos camisetas, pantalones y otras prendas personalizadas según el diseño del cliente.</p>
-    </div>
-    <div class="faq-item">
-      <h3>¿Cuál es el tiempo medio de entrega?</h3>
-      <p>El tiempo de entrega varía según el volumen del pedido. Puede ir desde 2 días para trabajos pequeños hasta 2 semanas para encargos más grandes.</p>
+  <section class="chatbot" id="chatbot">
+    <h2>¿Tienes dudas? ¡Nuestro bot te responde!</h2>
+    <div class="chat-window" id="chatVentana"></div>
+    <div class="chat-input">
+      <input type="text" id="userQuestion" placeholder="Escribe tu pregunta...">
+      <button onclick="responderPregunta()">Preguntar</button>
     </div>
   </section>
+
+  <script>
+    const respuestas = {
+      "ropa de baño": "Sí, realizamos cortes personalizados para ropa de baño como bikinis y bañadores.",
+      "camisetas": "También cortamos camisetas, pantalones y prendas personalizadas.",
+      "tiempo": "El tiempo de entrega puede ir de 2 días a 2 semanas, dependiendo del pedido.",
+      "artesanal": "El trabajo no es automatizado. Combinamos herramientas profesionales con atención manual personalizada.",
+    };
+
+    function responderPregunta() {
+      const entrada = document.getElementById("userQuestion");
+      const texto = entrada.value.trim();
+      if (!texto) return;
+
+      agregarBurbuja(texto, "user");
+      entrada.value = "";
+
+      let respuesta = "Lo siento, no tengo una respuesta para esa pregunta todavía. Puedes escribirnos por correo.";
+      for (const clave in respuestas) {
+        if (texto.toLowerCase().includes(clave)) {
+          respuesta = respuestas[clave];
+          break;
+        }
+      }
+
+      setTimeout(() => agregarBurbuja(respuesta, "bot"), 500);
+    }
+
+    function agregarBurbuja(texto, tipo) {
+      const ventana = document.getElementById("chatVentana");
+      const burbuja = document.createElement("div");
+      burbuja.className = `chat-bubble ${tipo}`;
+      burbuja.innerText = texto;
+      ventana.appendChild(burbuja);
+      ventana.scrollTop = ventana.scrollHeight;
+    }
+  </script>
 
   <footer>
     <p>© 2025 CorteTexVid. Todos los derechos reservados.</p>
