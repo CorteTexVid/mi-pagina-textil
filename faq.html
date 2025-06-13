@@ -141,9 +141,18 @@
   }
 
   function agregarBurbuja(texto, tipo) {
-    const ventana = document.getElementById("chatVentana");
-    const burbuja = document.createElement("div");
-    burbuja.className = `chat-bubble ${tipo}`;
+  const ventana = document.getElementById("chatVentana");
+  const burbuja = document.createElement("div");
+  burbuja.className = `chat-bubble ${tipo}`;
+  burbuja.innerHTML = texto;
+  ventana.appendChild(burbuja);
+  ventana.scrollTop = ventana.scrollHeight;
+}
+
+// Mensaje de bienvenida al cargar
+window.addEventListener("load", () => {
+  agregarBurbuja("¡Hola! ¿En qué puedo ayudarte?", "bot");
+});`;
     burbuja.innerHTML = texto;
     ventana.appendChild(burbuja);
     ventana.scrollTop = ventana.scrollHeight;
