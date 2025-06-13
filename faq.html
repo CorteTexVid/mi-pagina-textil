@@ -105,7 +105,14 @@
   "artesanal": "El trabajo no es automatizado. Combinamos herramientas profesionales con atención manual personalizada.",
   "precios": "Los precios varían según la cantidad, tipo de prenda y complejidad. Por ejemplo, un bañador simple puede costar desde 1,60€ si es por volumen. Escríbenos y te daremos un presupuesto claro y personalizado.",
   "tarifa": "Contamos con tarifas detalladas por prenda: bañadores simples, con vivos, complejos, bikinis, turbantes, etc. Podemos enviártela completa por correo si lo deseas."
-};;
+};
+
+document.getElementById("userQuestion").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    responderPregunta();
+  }
+});
 
     function responderPregunta() {
   const entrada = document.getElementById("userQuestion");
@@ -132,14 +139,6 @@
 
   setTimeout(() => agregarBurbuja(respuesta, "bot"), 500);
 }
-
-// Permitir enviar con Enter
-const input = document.getElementById("userQuestion");
-input.addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    responderPregunta();
-  }
 });
       }
 
