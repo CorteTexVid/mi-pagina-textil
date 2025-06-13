@@ -98,62 +98,57 @@
   </section>
 
   <script>
-    const respuestas = {
-  "ropa de baño": "Sí, realizamos cortes personalizados para ropa de baño como bikinis y bañadores.",
-  "camisetas": "También cortamos camisetas, pantalones y prendas personalizadas.",
-  "tiempo": "El tiempo de entrega puede ir de 2 días a 2 semanas, dependiendo del pedido.",
-  "artesanal": "El trabajo no es automatizado. Combinamos herramientas profesionales con atención manual personalizada.",
-  "precios": "Los precios varían según la cantidad, tipo de prenda y complejidad. Por ejemplo, un bañador simple puede costar desde 1,60€ si es por volumen. Escríbenos y te daremos un presupuesto claro y personalizado.",
-  "tarifa": "Contamos con tarifas detalladas por prenda: bañadores simples, con vivos, complejos, bikinis, turbantes, etc. Podemos enviártela completa por correo si lo deseas."
-};
+  const respuestas = {
+    "ropa de baño": "Sí, realizamos cortes personalizados para ropa de baño como bikinis y bañadores.",
+    "camisetas": "También cortamos camisetas, pantalones y prendas personalizadas.",
+    "tiempo": "El tiempo de entrega puede ir de 2 días a 2 semanas, dependiendo del pedido.",
+    "artesanal": "El trabajo no es automatizado. Combinamos herramientas profesionales con atención manual personalizada.",
+    "precios": "Los precios varían según la cantidad, tipo de prenda y complejidad. Por ejemplo, un bañador simple puede costar desde 1,60€ si es por volumen. Escríbenos y te daremos un presupuesto claro y personalizado.",
+    "tarifa": "Contamos con tarifas detalladas por prenda: bañadores simples, con vivos, complejos, bikinis, turbantes, etc. Podemos enviártela completa por correo si lo deseas."
+  };
 
-document.getElementById("userQuestion").addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    responderPregunta();
-  }
-});
+  document.getElementById("userQuestion").addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      responderPregunta();
+    }
+  });
 
-    function responderPregunta() {
-  const entrada = document.getElementById("userQuestion");
-  const texto = entrada.value.trim();
-  if (!texto) return;
+  function responderPregunta() {
+    const entrada = document.getElementById("userQuestion");
+    const texto = entrada.value.trim();
+    if (!texto) return;
 
-  agregarBurbuja(texto, "user");
-  entrada.value = "";
+    agregarBurbuja(texto, "user");
+    entrada.value = "";
 
-  const textoMin = texto.toLowerCase();
-  let respuesta = `No tengo una respuesta exacta para eso, pero estaré encantado de ayudarte personalmente. Escríbenos por <a href='https://wa.me/34609565283' target='_blank'>WhatsApp</a> o al correo <a href='mailto:cortetexvid@gmail.com'>cortetexvid@gmail.com</a> y responderemos lo antes posible.`;
+    const textoMin = texto.toLowerCase();
+    let respuesta = `No tengo una respuesta exacta para eso, pero estaré encantado de ayudarte personalmente. Escríbenos por <a href='https://wa.me/34609565283' target='_blank'>WhatsApp</a> o al correo <a href='mailto:cortetexvid@gmail.com'>cortetexvid@gmail.com</a> y responderemos lo antes posible.`;
 
-  if (textoMin.includes("ropa") && textoMin.includes("baño")) {
-    respuesta = respuestas["ropa de baño"];
-  } else if (textoMin.includes("camiseta") || textoMin.includes("pantalón")) {
-    respuesta = respuestas["camisetas"];
-  } else if (textoMin.includes("tiempo") || textoMin.includes("tarda") || textoMin.includes("entrega")) {
-    respuesta = respuestas["tiempo"];
-  } else if (textoMin.includes("artesanal") || textoMin.includes("fábrica") || textoMin.includes("máquina")) {
-    respuesta = respuestas["artesanal"];
-  } else if (textoMin.includes("precio") || textoMin.includes("cuánto cuesta") || textoMin.includes("tarifa") || textoMin.includes("presupuesto")) {
-    respuesta = respuestas["precios"];
-  }
-
-  setTimeout(() => agregarBurbuja(respuesta, "bot"), 500);
-}
-});
-      }
-
-      setTimeout(() => agregarBurbuja(respuesta, "bot"), 500);
+    if (textoMin.includes("ropa") && textoMin.includes("baño")) {
+      respuesta = respuestas["ropa de baño"];
+    } else if (textoMin.includes("camiseta") || textoMin.includes("pantalón")) {
+      respuesta = respuestas["camisetas"];
+    } else if (textoMin.includes("tiempo") || textoMin.includes("tarda") || textoMin.includes("entrega")) {
+      respuesta = respuestas["tiempo"];
+    } else if (textoMin.includes("artesanal") || textoMin.includes("fábrica") || textoMin.includes("máquina")) {
+      respuesta = respuestas["artesanal"];
+    } else if (textoMin.includes("precio") || textoMin.includes("cuánto cuesta") || textoMin.includes("tarifa") || textoMin.includes("presupuesto")) {
+      respuesta = respuestas["precios"];
     }
 
-    function agregarBurbuja(texto, tipo) {
-      const ventana = document.getElementById("chatVentana");
-      const burbuja = document.createElement("div");
-      burbuja.className = `chat-bubble ${tipo}`;
-      burbuja.innerHTML = texto;
-      ventana.appendChild(burbuja);
-      ventana.scrollTop = ventana.scrollHeight;
-    }
-  </script>
+    setTimeout(() => agregarBurbuja(respuesta, "bot"), 500);
+  }
+
+  function agregarBurbuja(texto, tipo) {
+    const ventana = document.getElementById("chatVentana");
+    const burbuja = document.createElement("div");
+    burbuja.className = `chat-bubble ${tipo}`;
+    burbuja.innerHTML = texto;
+    ventana.appendChild(burbuja);
+    ventana.scrollTop = ventana.scrollHeight;
+  }
+</script>
 
   <footer>
     <p>© 2025 CorteTexVid. Todos los derechos reservados.</p>
