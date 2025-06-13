@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Segoe UI", sans-serif;
   line-height: 1.6;
@@ -92,13 +96,7 @@ nav {
   background-color: #e6b800;
 }
 
-/* Servicios */
-.services {
-  padding: 4rem 2rem;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
+/* SOBRE NOSOTROS */
 .about {
   padding: 4rem 2rem;
   background-color: #ffffff;
@@ -117,6 +115,13 @@ nav {
   font-size: 1.2rem;
   line-height: 1.8;
   color: #333;
+}
+
+/* Servicios */
+.services {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
 }
 
 .services h2 {
@@ -168,7 +173,6 @@ nav {
   line-height: 1.6;
 }
 
-/* Separación entre dirección y botón */
 .contact-info {
   margin-bottom: 2rem;
 }
