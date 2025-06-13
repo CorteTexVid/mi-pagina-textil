@@ -21,48 +21,55 @@
 
   <!-- HERO / INICIO -->
   <section class="hero" id="inicio">
-    <h2>Corte textil de precisión</h2>
-    <p>Especialistas en confección de ropa de baño y prendas a medida</p>
-    <a href="mailto:cortetexvid@gmail.com?subject=Presupuesto Corte Textil" class="btn">Solicita tu presupuesto</a>
-  </section>
+  <h2>Corte textil de precisión</h2>
+  <p>Especialistas en confección de ropa de baño y prendas a medida</p>
+  <p style="margin-top: 10px; font-weight: bold;">Trabajamos con tus telas. Entrega desde 2 días. Servicio profesional desde 1982.</p>
+  <a href="mailto:cortetexvid@gmail.com?subject=Presupuesto Corte Textil" class="btn">Solicita tu presupuesto</a>
+</section>
 
   <!-- SOBRE NOSOTROS -->
   <section class="about" id="nosotros">
-    <h2>Sobre Nosotros</h2>
-    <p>
-      En CorteTexVid somos especialistas en corte textil de precisión. Nos enfocamos en la confección de ropa de baño, camisetas, pantalones y cualquier prenda personalizada que necesite el cliente. Combinamos experiencia, calidad y rapidez para ofrecer un servicio textil profesional en Girona.
-    </p>
-  </section>
+  <h2>Sobre Nosotros</h2>
+  <p>
+    Somos una pequeña empresa familiar que ya va por la tercera generación. Desde 1982, en CorteTexVid nos dedicamos con pasión al corte textil. A diferencia de otras empresas, todo nuestro trabajo es manual y artesanal, ofreciendo un trato cercano y personalizado.
+  </p>
+</section>
 
   <!-- SERVICIOS -->
   <section class="services" id="servicios">
-    <h2>Servicios</h2>
-    <div class="service-cards">
-      <div class="card">
-        <h3>Ropa de baño</h3>
-        <p>Corte y confección profesional para bañadores y bikinis a medida.</p>
-      </div>
-      <div class="card">
-        <h3>Camisetas y pantalones</h3>
-        <p>Fabricación personalizada de prendas básicas o diseño exclusivo.</p>
-      </div>
-      <div class="card">
-        <h3>Pedidos personalizados</h3>
-        <p>Nos adaptamos a lo que necesites. Diseño y corte textil bajo demanda.</p>
-      </div>
-    </div>
-  </section>
+  <h2>Servicios</h2>
+  <p>Nos dedicamos exclusivamente al corte textil. Tú contactas con tu proveedor textil y nos envías los patrones y las telas. Nosotros realizamos el corte con maquinaria profesional y acabado manual. Aceptamos pedidos a partir de 5 unidades. Si son menos, también podemos hacerlo como muestra.</p>
+  <ul style="margin-top: 1rem; list-style-type: disc; padding-left: 2rem;">
+    <li>Bikinis y bañadores</li>
+    <li>Camisetas, tops y sudaderas</li>
+    <li>Pantalones, shorts, mallas</li>
+    <li>Faldas y vestidos</li>
+    <li>Ropa interior y pijamas</li>
+    <li>Prendas personalizadas</li>
+  </ul>
+</section>
 
   <!-- CONTACTO -->
   <section class="contact" id="contacto">
-    <h2>Contacto</h2>
-    <div class="contact-info">
-      <p><strong>Dirección:</strong> C/Salvador Dalí 19, Vidreres, Girona, España</p>
-      <p><strong>Teléfono:</strong> +34 609 565 283</p>
-      <p><strong>Email:</strong> cortetexvid@gmail.com</p>
-    </div>
-    <a href="mailto:cortetexvid@gmail.com?subject=Presupuesto Corte Textil" class="btn">Envíanos un correo</a>
-  </section>
+  <h2>Contacto</h2>
+  <div class="contact-info">
+    <p><strong>Dirección:</strong> C/Salvador Dalí 19, Vidreres, Girona, España</p>
+    <p><strong>Teléfono:</strong> +34 609 565 283</p>
+    <p><strong>Email:</strong> cortetexvid@gmail.com</p>
+  </div>
+  <a href="mailto:cortetexvid@gmail.com?subject=Presupuesto Corte Textil" class="btn">Envíanos un correo</a>
+  <div style="margin-top: 2rem;">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.458991407659!2d2.754882315723967!3d41.783278679229446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12bae6c15d6421f1%3A0x3b6cf3e225155b38!2sCarrer%20Salvador%20Dal%C3%AD%2C%2019%2C%2017449%20Vidreres%2C%20Girona%2C%20España!5e0!3m2!1ses!2ses!4v1687773931564!5m2!1ses!2ses" 
+      width="100%" 
+      height="300" 
+      style="border:0; border-radius: 12px;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
 
   <footer>
     <p>© 2025 CorteTexVid. Todos los derechos reservados.</p>
@@ -97,6 +104,20 @@
       entrada.value = "";
 
       let respuesta = `No tengo una respuesta exacta para eso, pero escríbenos por <a href='https://wa.me/34609565283' target='_blank'>WhatsApp</a> o al correo <a href='mailto:cortetexvid@gmail.com'>cortetexvid@gmail.com</a>.`;
+
+      if (texto.includes("prenda") || texto.includes("camiseta") || texto.includes("pantalón") || texto.includes("bikini") || texto.includes("bañador") || texto.includes("vestido") || texto.includes("falda") || texto.includes("ropa interior") || texto.includes("pijama")) {
+        respuesta = "Cortamos todo tipo de prendas como camisetas, bikinis, bañadores, vestidos, pijamas, ropa interior, pantalones, faldas, etc.";
+      } else if (texto.includes("tiempo") || texto.includes("entrega") || texto.includes("tardar")) {
+        respuesta = "El tiempo de entrega va de 2 días a 2 semanas, dependiendo del volumen del pedido.";
+      } else if (texto.includes("precio") || texto.includes("cuánto cuesta") || texto.includes("coste")) {
+        respuesta = "Los precios dependen del tipo de prenda y cantidad. Para pedidos grandes hay descuento por volumen. Un bañador básico puede costar desde 1,60€.";
+      } else if (texto.includes("mínimo") || texto.includes("unidad") || texto.includes("pedido")) {
+        respuesta = "Los pedidos empiezan a partir de 5 unidades. Para menos, lo tratamos como muestra.";
+      } else if (texto.includes("tela") || texto.includes("material")) {
+        respuesta = "Trabajamos con las telas que tú nos envías. Solo hacemos el corte, no proveemos el material.";
+      } else if (texto.includes("cómo enviar") || texto.includes("enviar patrón") || texto.includes("cómo encargar")) {
+        respuesta = "Nos puedes enviar tus telas y patrones por mensajería. Contacta con nosotros por WhatsApp o correo para organizarlo.";
+      }
 
       if (texto.includes("prenda") || texto.includes("camiseta") || texto.includes("pantalón") || texto.includes("bikini") || texto.includes("bañador")) {
         respuesta = "Cortamos todo tipo de prendas como camisetas, bikinis, bañadores, vestidos, pijamas, ropa interior, etc.";
