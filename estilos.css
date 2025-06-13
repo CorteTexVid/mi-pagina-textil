@@ -61,14 +61,7 @@ nav {
 .hero {
   background: 
     linear-gradient(rgba(0, 64, 128, 0.7), rgba(0, 64, 128, 0.7)),
-    url('fondo-telas-optimizado.webp') center/cover no-repeat;
-  color: white;
-  padding: 6rem 0;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+    url('fondo-telas-optimizado.jpg') center/cover no-repeat;
 }
 
 .hero h1 {
