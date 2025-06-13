@@ -191,5 +191,61 @@ document.getElementById("userQuestion").addEventListener("keypress", function (e
   <p>© 2025 CorteTexVid. Todos los derechos reservados.</p>
 </footer>
 
+<div id="chat-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+  <button onclick="abrirChat()" style="background-color: #003366; color: white; border: none; padding: 0.75rem 1rem; border-radius: 50px; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+    ¿Tienes dudas?
+  </button>
+  <div id="chat-box" style="display: none; position: absolute; bottom: 60px; right: 0; width: 300px; background: white; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+    <div style="padding: 1rem; border-bottom: 1px solid #eee; font-weight: bold; background: #003366; color: white; border-top-left-radius: 10px; border-top-right-radius: 10px;">CorteTexVid</div>
+    <div id="chatVentanaMini" style="height: 200px; overflow-y: auto; padding: 1rem; font-size: 0.9rem;"></div>
+    <div style="display: flex; border-top: 1px solid #eee;">
+      <input type="text" id="miniPregunta" placeholder="Escribe tu pregunta..." style="flex: 1; border: none; padding: 0.5rem; font-size: 0.9rem;">
+      <button onclick="responderMini()" style="background: #ffcc00; border: none; padding: 0.5rem 1rem; font-weight: bold; cursor: pointer;">Enviar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function abrirChat() {
+  const box = document.getElementById('chat-box');
+  box.style.display = box.style.display === 'none' ? 'block' : 'none';
+}
+
+function responderMini() {
+  const entrada = document.getElementById("miniPregunta");
+  const texto = entrada.value.trim().toLowerCase();
+  if (!texto) return;
+  agregarBurbujaMini(entrada.value, "user");
+  entrada.value = "";
+
+  let respuesta = `No tengo una respuesta exacta para eso, pero escríbenos por <a href='https://wa.me/34609565283' target='_blank'>WhatsApp</a> o al correo <a href='mailto:cortetexvid@gmail.com'>cortetexvid@gmail.com</a>.`;
+
+  if (texto.includes("prenda") || texto.includes("camiseta") || texto.includes("pantalón") || texto.includes("bikini") || texto.includes("bañador")) {
+    respuesta = "Cortamos todo tipo de prendas como camisetas, bikinis, bañadores, vestidos, pijamas, ropa interior, etc.";
+  } else if (texto.includes("tiempo") || texto.includes("entrega")) {
+    respuesta = "Tardamos entre 2 días y 2 semanas según el volumen del pedido.";
+  } else if (texto.includes("precio") || texto.includes("cuánto cuesta")) {
+    respuesta = "Los precios varían según prenda y cantidad. Por ejemplo, un bañador simple en volumen puede costar desde 1,60€.";
+  }
+
+  setTimeout(() => agregarBurbujaMini(respuesta, "bot"), 500);
+}
+
+function agregarBurbujaMini(texto, tipo) {
+  const ventana = document.getElementById("chatVentanaMini");
+  const burbuja = document.createElement("div");
+  burbuja.style.marginBottom = '0.5rem';
+  burbuja.style.background = tipo === 'user' ? '#003366' : '#e0e0e0';
+  burbuja.style.color = tipo === 'user' ? 'white' : 'black';
+  burbuja.style.padding = '0.5rem';
+  burbuja.style.borderRadius = '12px';
+  burbuja.style.maxWidth = '85%';
+  burbuja.style.fontSize = '0.9rem';
+  burbuja.innerHTML = texto;
+  ventana.appendChild(burbuja);
+  ventana.scrollTop = ventana.scrollHeight;
+}
+</script>
+
 </body>
 </html>
