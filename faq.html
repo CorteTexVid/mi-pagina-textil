@@ -3,88 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="CorteTexVid - Corte textil de precisión en Girona. Confección de ropa de baño, camisetas y pedidos personalizados." />
-  <title>CorteTexVid | Corte Textil de Precisión</title>
+  <title>Preguntas Frecuentes | CorteTexVid</title>
   <link rel="stylesheet" href="estilos.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    .chatbot {
+      padding: 3rem 2rem;
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+    .chatbot h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: #003366;
+    }
+    .chat-window {
+      background: #f1f1f1;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: left;
+      max-height: 400px;
+      overflow-y: auto;
+      margin-bottom: 1rem;
+    }
+    .chat-bubble {
+      max-width: 80%;
+      padding: 0.8rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      display: inline-block;
+      line-height: 1.5;
+    }
+    .user {
+      background-color: #003366;
+      color: #fff;
+      align-self: flex-end;
+      text-align: right;
+      float: right;
+    }
+    .bot {
+      background-color: #e0e0e0;
+      color: #000;
+      align-self: flex-start;
+      text-align: left;
+      float: left;
+    }
+    .chat-input {
+      width: 100%;
+      display: flex;
+      gap: 0.5rem;
+    }
+    .chat-input input {
+      flex: 1;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .chat-input button {
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      border: none;
+      background-color: #ffcc00;
+      color: #003366;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
-  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="topBtn">↑</button>
-
-  <header>
-    <div class="logo">CorteTexVid</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="hero" id="inicio">
-    <h1>Corte textil de precisión</h1>
-    <p>Especialistas en confección de ropa de baño y prendas a medida</p>
-    <a href="mailto:cortetexvid@gmail.com?subject=Presupuesto Corte Textil" class="btn">Solicita tu presupuesto</a>
-  </section>
-
-  <section class="about" id="nosotros">
-    <h2>Sobre Nosotros</h2>
-    <p>
-      En CorteTexVid somos especialistas en corte textil de precisión. Nos enfocamos en la confección de ropa de baño, camisetas, pantalones y cualquier prenda personalizada que necesite el cliente. Combinamos experiencia, calidad y rapidez para ofrecer un servicio textil profesional en Girona.
-    </p>
-  </section>
-
-  <section class="services" id="servicios">
-    <h2>Servicios</h2>
-    <div class="service-cards">
-      <div class="card">
-        <h3>Ropa de baño</h3>
-        <p>Corte y confección profesional para bañadores y bikinis a medida.</p>
-      </div>
-      <div class="card">
-        <h3>Camisetas y pantalones</h3>
-        <p>Fabricación personalizada de prendas básicas o diseño exclusivo.</p>
-      </div>
-      <div class="card">
-        <h3>Pedidos personalizados</h3>
-        <p>Nos adaptamos a lo que necesites. Diseño y corte textil bajo demanda.</p>
-      </div>
+  <section class="chatbot" id="chatbot">
+    <h2>¿Tienes dudas? ¡Nosotros te respondemos!</h2>
+    <div class="chat-window" id="chatVentana"></div>
+    <div class="chat-input">
+      <input type="text" id="userQuestion" placeholder="Escribe tu pregunta...">
+      <button onclick="responderPregunta()">Preguntar</button>
     </div>
   </section>
 
-  <section class="contact" id="contacto">
-    <h2>Contacto</h2>
-    <div class="contact-info">
-      <p><strong>Dirección:</strong> C/Salvador Dalí 19, Vidreres, Girona, España</p>
-      <p><strong>Teléfono:</strong> +34 609 565 283</p>
-      <p><strong>Email:</strong> cortetexvid@gmail.com</p>
-    </div>
+  <script>
+    const respuestas = {
+  "ropa de baño": "Sí, realizamos cortes personalizados para ropa de baño como bikinis y bañadores.",
+  "camisetas": "También cortamos camisetas, pantalones y prendas personalizadas.",
+  "tiempo": "El tiempo de entrega puede ir de 2 días a 2 semanas, dependiendo del pedido.",
+  "artesanal": "El trabajo no es automatizado. Combinamos herramientas profesionales con atención manual personalizada.",
+  "precios": "Los precios varían según la cantidad, tipo de prenda y complejidad. Por ejemplo, un bañador simple puede costar desde 1,60€ si es por volumen. Escríbenos y te daremos un presupuesto claro y personalizado.",
+  "tarifa": "Contamos con tarifas detalladas por prenda: bañadores simples, con vivos, complejos, bikinis, turbantes, etc. Podemos enviártela completa por correo si lo deseas."
+};;
 
-    <form action="mailto:cortetexvid@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="nombre" placeholder="Tu nombre" required />
-      <input type="email" name="email" placeholder="Tu email" required />
-      <textarea name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
-      <button type="submit" class="btn">Enviar</button>
-    </form>
+    function responderPregunta() {
+  const entrada = document.getElementById("userQuestion");
+  const texto = entrada.value.trim();
+  if (!texto) return;
 
-    <iframe src="https://www.google.com/maps?q=Salvador+Dal%C3%AD+19,+Vidreres,+Girona&output=embed" loading="lazy"></iframe><br>
-    <a href="mailto:cortetexvid@gmail.com?subject=Presupuesto Corte Textil" class="btn">Envíanos un correo</a>
-  </section>
+  agregarBurbuja(texto, "user");
+  entrada.value = "";
+
+  const textoMin = texto.toLowerCase();
+  let respuesta = `No tengo una respuesta exacta para eso, pero estaré encantado de ayudarte personalmente. Escríbenos por <a href='https://wa.me/34609565283' target='_blank'>WhatsApp</a> o al correo <a href='mailto:cortetexvid@gmail.com'>cortetexvid@gmail.com</a> y responderemos lo antes posible.`;
+
+  if (textoMin.includes("ropa") && textoMin.includes("baño")) {
+    respuesta = respuestas["ropa de baño"];
+  } else if (textoMin.includes("camiseta") || textoMin.includes("pantalón")) {
+    respuesta = respuestas["camisetas"];
+  } else if (textoMin.includes("tiempo") || textoMin.includes("tarda") || textoMin.includes("entrega")) {
+    respuesta = respuestas["tiempo"];
+  } else if (textoMin.includes("artesanal") || textoMin.includes("fábrica") || textoMin.includes("máquina")) {
+    respuesta = respuestas["artesanal"];
+  } else if (textoMin.includes("precio") || textoMin.includes("cuánto cuesta") || textoMin.includes("tarifa") || textoMin.includes("presupuesto")) {
+    respuesta = respuestas["precios"];
+  }
+
+  setTimeout(() => agregarBurbuja(respuesta, "bot"), 500);
+}
+
+// Permitir enviar con Enter
+const input = document.getElementById("userQuestion");
+input.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    responderPregunta();
+  }
+});
+      }
+
+      setTimeout(() => agregarBurbuja(respuesta, "bot"), 500);
+    }
+
+    function agregarBurbuja(texto, tipo) {
+      const ventana = document.getElementById("chatVentana");
+      const burbuja = document.createElement("div");
+      burbuja.className = `chat-bubble ${tipo}`;
+      burbuja.innerHTML = texto;
+      ventana.appendChild(burbuja);
+      ventana.scrollTop = ventana.scrollHeight;
+    }
+  </script>
 
   <footer>
     <p>© 2025 CorteTexVid. Todos los derechos reservados.</p>
   </footer>
 
-  <script>
-    const topBtn = document.getElementById("topBtn");
-    window.onscroll = () => {
-      topBtn.style.display = window.scrollY > 200 ? "block" : "none";
-    };
-  </script>
 </body>
 </html>
