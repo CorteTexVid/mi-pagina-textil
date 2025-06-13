@@ -59,9 +59,12 @@ nav {
 
 /* Hero */
 .hero {
-  background: 
+  background:
     linear-gradient(rgba(0, 64, 128, 0.7), rgba(0, 64, 128, 0.7)),
-    url('IMG_20250613_113726.jpg') center/cover no-repeat;
+    url('fondo-telas.jpg') center/cover no-repeat;
+  ...
+}
+
   color: white;
   padding: 6rem 0;
   text-align: center;
