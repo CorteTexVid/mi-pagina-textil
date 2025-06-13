@@ -99,13 +99,18 @@
 
   <script>
   const respuestas = {
-    "ropa de baño": "Sí, realizamos cortes personalizados para ropa de baño como bikinis y bañadores.",
-    "camisetas": "También cortamos camisetas, pantalones y prendas personalizadas.",
-    "tiempo": "El tiempo de entrega puede ir de 2 días a 2 semanas, dependiendo del pedido.",
-    "artesanal": "El trabajo no es automatizado. Combinamos herramientas profesionales con atención manual personalizada.",
-    "precios": "Los precios varían según la cantidad, tipo de prenda y complejidad. Por ejemplo, un bañador simple puede costar desde 1,60€ si es por volumen. Escríbenos y te daremos un presupuesto claro y personalizado.",
-    "tarifa": "Contamos con tarifas detalladas por prenda: bañadores simples, con vivos, complejos, bikinis, turbantes, etc. Podemos enviártela completa por correo si lo deseas."
-  };
+  "ropa de baño": "Sí, realizamos cortes personalizados para ropa de baño como bikinis y bañadores.",
+  "camisetas": "También cortamos camisetas, pantalones, vestidos, tops, sudaderas, faldas, lencería, pijamas, bodies y mucho más.",
+  "tipo de prendas": "Cortamos todo tipo de prendas: bikinis, bañadores, camisetas, pantalones, vestidos, sudaderas, ropa interior, pijamas, faldas, tops, etc.",
+  "tiempo": "El tiempo de entrega puede ir de 2 días a 2 semanas, dependiendo del pedido.",
+  "telas del cliente": "Sí, trabajamos con las telas que nos envía cada cliente. Tú nos haces llegar el material y nosotros lo cortamos según tu diseño.",
+  "pocas unidades": "Sí, puedes pedir pocas unidades. Los precios varían según la cantidad y el tipo de prenda.",
+  "precio por volumen": "Sí, ofrecemos precios más económicos por volumen. Cuantas más unidades, más ajustado será el precio.",
+  "máquinas": "Utilizamos maquinaria profesional, pero no es un proceso industrial automatizado. Todo el trabajo es preparado y controlado artesanalmente.",
+  "ubicación": "Estamos en Vidreres, Girona. Nuestra dirección es Carrer Salvador Dalí 19.",
+  "enviar telas": "Sí, puedes enviarnos tus telas. Solo necesitamos que nos contactes por WhatsApp, correo o llamada para organizar el pedido.",
+  "cómo enviar": "Puedes enviarnos tu pedido por WhatsApp al +34 609 565 283, por correo a cortetexvid@gmail.com o llamarnos directamente."
+};
 
   document.getElementById("userQuestion").addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
@@ -125,9 +130,27 @@
     const textoMin = texto.toLowerCase();
     let respuesta = `No tengo una respuesta exacta para eso, pero estaré encantado de ayudarte personalmente. Escríbenos por <a href='https://wa.me/34609565283' target='_blank'>WhatsApp</a> o al correo <a href='mailto:cortetexvid@gmail.com'>cortetexvid@gmail.com</a> y responderemos lo antes posible.`;
 
-    if (textoMin.includes("ropa") && textoMin.includes("baño")) {
-      respuesta = respuestas["ropa de baño"];
-    } else if (textoMin.includes("camiseta") || textoMin.includes("pantalón")) {
+    if (textoMin.includes("ropa de baño") || textoMin.includes("bañador") || textoMin.includes("bikini")) {
+  respuesta = respuestas["ropa de baño"];
+} else if (textoMin.includes("camiseta") || textoMin.includes("pantalón") || textoMin.includes("vestido") || textoMin.includes("sudadera") || textoMin.includes("ropa interior") || textoMin.includes("falda")) {
+  respuesta = respuestas["tipo de prendas"];
+} else if (textoMin.includes("tiempo") || textoMin.includes("tarda") || textoMin.includes("entrega")) {
+  respuesta = respuestas["tiempo"];
+} else if (textoMin.includes("tela") && textoMin.includes("cliente")) {
+  respuesta = respuestas["telas del cliente"];
+} else if (textoMin.includes("pocas unidades") || textoMin.includes("poco") || textoMin.includes("una sola")) {
+  respuesta = respuestas["pocas unidades"];
+} else if (textoMin.includes("precio por volumen") || textoMin.includes("mucho pedido") || textoMin.includes("precio en cantidad")) {
+  respuesta = respuestas["precio por volumen"];
+} else if (textoMin.includes("máquina") || textoMin.includes("industrial") || textoMin.includes("fábrica")) {
+  respuesta = respuestas["máquinas"];
+} else if (textoMin.includes("dónde estáis") || textoMin.includes("ubicación") || textoMin.includes("dirección")) {
+  respuesta = respuestas["ubicación"];
+} else if (textoMin.includes("enviar tela") || textoMin.includes("puedo enviar") || textoMin.includes("envío tela")) {
+  respuesta = respuestas["enviar telas"];
+} else if (textoMin.includes("cómo enviar") || textoMin.includes("hacer pedido") || textoMin.includes("contacto")) {
+  respuesta = respuestas["cómo enviar"];
+} else if (textoMin.includes("camiseta") || textoMin.includes("pantalón")) {
       respuesta = respuestas["camisetas"];
     } else if (textoMin.includes("tiempo") || textoMin.includes("tarda") || textoMin.includes("entrega")) {
       respuesta = respuestas["tiempo"];
