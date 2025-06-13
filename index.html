@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CorteTexVid | Corte Textil de Precisión</title>
   <link rel="stylesheet" href="estilos.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
   <header>
@@ -60,68 +61,131 @@
     </div>
   </section>
 
-  <!-- FORMULARIO CONTACTO CON ARCHIVOS -->
-  <section id="contacto-form" style="margin-top: 2rem;">
-    <h2>Contacto y envío de archivos</h2>
-    <form id="contactForm" action="#" method="post" enctype="multipart/form-data" style="max-width: 500px; margin: auto;">
-      <label for="nombre">Nombre:</label><br />
-      <input type="text" id="nombre" name="nombre" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" />
+  <!-- FORMULARIO CONTACTO CON ARCHIVOS - COMPACTO -->
+  <section id="contacto-form" style="margin-top: 1rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+    <h2 style="margin-bottom: 0.5rem;">Contacto y envío de archivos</h2>
+    <form id="contactForm" action="#" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 0.5rem;">
+      <label for="nombre" style="margin-bottom: 0;">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required style="padding: 0.4rem;" />
 
-      <label for="email">Correo electrónico:</label><br />
-      <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;" />
+      <label for="email" style="margin-bottom: 0;">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required style="padding: 0.4rem;" />
 
-      <label for="mensaje">Mensaje:</label><br />
-      <textarea id="mensaje" name="mensaje" rows="4" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;"></textarea>
+      <label for="mensaje" style="margin-bottom: 0;">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="3" required style="padding: 0.4rem;"></textarea>
 
-      <label for="archivo">Adjuntar patrón o diseño (opcional):</label><br />
-      <input type="file" id="archivo" name="archivo" accept=".pdf,.jpg,.jpeg,.png,.svg" style="margin-bottom: 1rem;" />
+      <label for="archivo" style="margin-bottom: 0;">Adjuntar patrón o diseño (opcional):</label>
+      <input type="file" id="archivo" name="archivo" accept=".pdf,.jpg,.jpeg,.png,.svg" />
 
-      <button type="submit" style="background-color: #003366; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; cursor: pointer;">Enviar</button>
+      <button type="submit" style="background-color: #003366; color: white; padding: 0.5rem 1rem; border: none; border-radius: 6px; cursor: pointer; margin-top: 0.3rem;">Enviar</button>
     </form>
   </section>
 
- <!-- FORMULARIO CONTACTO CON ARCHIVOS - COMPACTO -->
-<section id="contacto-form" style="margin-top: 1rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-  <h2 style="margin-bottom: 0.5rem;">Contacto y envío de archivos</h2>
-  <form id="contactForm" action="#" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 0.5rem;">
-    <label for="nombre" style="margin-bottom: 0;">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" required style="padding: 0.4rem;" />
+  <!-- LLAMADAS A LA ACCIÓN -->
+  <section class="cta-final" style="text-align: center; margin: 1.5rem 0;">
+    <h2>¿Quieres un presupuesto personalizado?</h2>
+    <p>Cuéntanos qué necesitas y te responderemos lo antes posible.</p>
+    <div style="margin-top: 1rem;">
+      <a href="https://wa.me/34609565283" class="btn" style="margin-right: 1rem; background-color: #25d366; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: bold;">📱 Escríbenos por WhatsApp</a>
+      <a href="mailto:cortetexvid@gmail.com?subject=Presupuesto%20Corte%20Textil&body=Hola%2C%20quiero%20realizar%20un%20pedido%20de%20corte%20textil%20con%20ustedes.%20Mis%20datos%20son..." class="btn" style="background-color: #003366; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: bold;">✉️ Envíanos un correo</a>
+    </div>
+  </section>
 
-    <label for="email" style="margin-bottom: 0;">Correo electrónico:</label>
-    <input type="email" id="email" name="email" required style="padding: 0.4rem;" />
+  <!-- CONTACTO -->
+  <section class="contact" id="contacto">
+    <h2>Contacto</h2>
+    <div class="contact-info">
+      <p><strong>Dirección:</strong> C/Salvador Dalí 19, Vidreres, Girona, España</p>
+      <p><strong>Teléfono:</strong> +34 609 565 283</p>
+      <p><strong>Email:</strong> cortetexvid@gmail.com</p>
+    </div>
+    <div style="margin-top: 2rem;">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.458991407659!2d2.754882315723967!3d41.783278679229446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12bae6c15d6421f1%3A0x3b6cf3e225155b38!2sCarrer%20Salvador%20Dal%C3%AD%2C%2019%2C%2017449%20Vidreres%2C%20Girona%2C%20Espa%C3%B1a!5e0!3m2!1ses!2ses!4v1687773931564!5m2!1ses!2ses" 
+        width="100%" 
+        height="300" 
+        style="border:0; border-radius: 12px;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
 
-    <label for="mensaje" style="margin-bottom: 0;">Mensaje:</label>
-    <textarea id="mensaje" name="mensaje" rows="3" required style="padding: 0.4rem;"></textarea>
-
-    <label for="archivo" style="margin-bottom: 0;">Adjuntar patrón o diseño (opcional):</label>
-    <input type="file" id="archivo" name="archivo" accept=".pdf,.jpg,.jpeg,.png,.svg" />
-
-    <button type="submit" style="background-color: #003366; color: white; padding: 0.5rem 1rem; border: none; border-radius: 6px; cursor: pointer; margin-top: 0.3rem;">Enviar</button>
-  </form>
-</section>
-
-<!-- BOTÓN LLAMADA DIRECTA MÓVILES - MÁS COMPACTO -->
-<style>
-  #llamada-flotante {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    background-color: #25d366;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    display: none;
-    z-index: 10000;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  @media (max-width: 768px) {
+  <!-- BOTÓN LLAMADA DIRECTA MÓVILES -->
+  <style>
     #llamada-flotante {
-      display: block;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      display: none;
+      z-index: 10000;
+      cursor: pointer;
+      text-decoration: none;
     }
-  }
-</style>
-<a href="tel:+34609565283" id="llamada-flotante">📞 Llámanos</a>
+    @media (max-width: 768px) {
+      #llamada-flotante {
+        display: block;
+      }
+    }
+  </style>
+  <a href="tel:+34609565283" id="llamada-flotante">📞 Llámanos</a>
+
+  <!-- BOT FLOTANTE -->
+  <div id="chat-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+    <button onclick="abrirChat()" style="background-color: #003366; color: white; border: none; padding: 0.75rem 1rem; border-radius: 50px; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+      ¿Tienes dudas?
+    </button>
+    <div id="chat-box" style="display: none; position: absolute; bottom: 60px; right: 0; width: 300px; background: white; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+      <div style="padding: 1rem; border-bottom: 1px solid #eee; font-weight: bold; background: #003366; color: white; border-top-left-radius: 10px; border-top-right-radius: 10px;">CorteTexVid</div>
+      <div id="chatVentanaMini" style="height: 200px; overflow-y: auto; padding: 1rem; font-size: 0.9rem;"></div>
+      <div style="display: flex; border-top: 1px solid #eee;">
+        <input type="text" id="miniPregunta" placeholder="Escribe tu pregunta..." style="flex: 1; border: none; padding: 0.5rem; font-size: 0.9rem;">
+        <button onclick="responderMini()" style="background: #ffcc00; border: none; padding: 0.5rem 1rem; font-weight: bold; cursor: pointer;">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function abrirChat() {
+      const box = document.getElementById('chat-box');
+      box.style.display = box.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function responderMini() {
+      const entrada = document.getElementById("miniPregunta");
+      const texto = entrada.value.trim().toLowerCase();
+      if (!texto) return;
+      agregarBurbujaMini(entrada.value, "user");
+      entrada.value = "";
+
+      let respuesta = `No tengo una respuesta exacta para eso, pero escríbenos por <a href='https://wa.me/34609565283' target='_blank'>WhatsApp</a> o al correo <a href='mailto:cortetexvid@gmail.com'>cortetexvid@gmail.com</a>.`;
+
+      if (texto.includes("prenda") || texto.includes("camiseta") || texto.includes("pantalón") || texto.includes("bikini") || texto.includes("bañador") || texto.includes("vestido") || texto.includes("falda") || texto.includes("ropa interior") || texto.includes("pijama")) {
+        respuesta = "Cortamos todo tipo de prendas como camisetas, bikinis, bañadores, vestidos, pijamas, ropa interior, pantalones, faldas, etc.";
+      } else if (texto.includes("tiempo") || texto.includes("entrega") || texto.includes("tardar")) {
+        respuesta = "El tiempo de entrega va de 2 días a 2 semanas, dependiendo del volumen del pedido.";
+      } else if (texto.includes("precio") || texto.includes("cuánto cuesta") || texto.includes("coste")) {
+        respuesta = "Los precios dependen del tipo de prenda y cantidad. Para pedidos grandes hay descuento por volumen. Un bañador básico puede costar desde 1,60€.";
+      } else if (texto.includes("mínimo") || texto.includes("unidad") || texto.includes("pedido")) {
+        respuesta = "Los pedidos empiezan a partir de 5 unidades. Para menos, lo tratamos como muestra.";
+      } else if (texto.includes("tela") || texto.includes("material")) {
+        respuesta = "Trabajamos con las telas que tú nos envías. Solo hacemos el corte, no proveemos el material.";
+      } else if (texto.includes("cómo enviar") || texto.includes("enviar patrón") || texto.includes("cómo encargar")) {
+        respuesta = "Nos puedes enviar tus telas y patrones por mensajería. Contacta con nosotros por WhatsApp o correo para organizarlo.";
+      }
+
+      setTimeout(() => agregarBurbujaMini(respuesta, "bot"), 500);
+    }
+
+    function agregarBurbujaMini(texto, tipo) {
+      const ventana = document.getElementById("chatVentanaMini");
+      const burbuja = document.createElement("div");
+      burbuja.style.marginBottom = '
