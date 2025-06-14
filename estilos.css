@@ -35,6 +35,16 @@ header {
   gap: 1.2rem;
 }
 
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #003366;
+  color: white;
+  font-size: 0.9rem;
+  border-top: 3px solid #ffcc00;
+}
+
+
 .nav-links li a,
 .nav-links li button {
   color: white;
