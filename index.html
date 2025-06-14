@@ -9,117 +9,227 @@
   <title>CorteTexVid | Corte Textil de Precisión</title>
   <link rel="stylesheet" href="estilos.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #003366;
+      color: white;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+    footer .redes {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    footer .redes a svg {
+      fill: white;
+      width: 24px;
+      height: 24px;
+      transition: fill 0.3s;
+    }
+    footer .redes a:hover svg {
+      fill: #ffcc00;
+    }
+    /* Chat box styles */
+    #chat-box {
+      display: none;
+      position: fixed;
+      bottom: 70px;
+      right: 20px;
+      width: 300px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 9999;
+      font-family: sans-serif;
+      flex-direction: column;
+    }
+    #chat-header {
+      background: #003366;
+      color: white;
+      padding: 1rem;
+      font-weight: bold;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    #chat-window {
+      height: 200px;
+      overflow-y: auto;
+      padding: 1rem;
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    #chat-input-container {
+      display: flex;
+      border-top: 1px solid #eee;
+    }
+    #chat-input {
+      flex: 1;
+      padding: 0.5rem;
+      border: none;
+      font-size: 0.9rem;
+    }
+    #send-btn {
+      background: #ffcc00;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #chat-toggle-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 10000;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="logo">CorteTexVid</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="faq.html">Preguntas Frecuentes</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- HERO / INICIO -->
-  <section class="hero" id="inicio">
-    <h2>Corte textil de precisión</h2>
-    <p>Especialistas en confección de ropa de baño y prendas a medida</p>
-    <p style="margin-top: 10px; font-weight: bold;">Trabajamos con tus telas. Entrega desde 2 días. Servicio profesional desde 1982.</p>
-    <a href="mailto:cortetexvid@gmail.com?subject=Presupuesto Corte Textil" class="btn">Solicita tu presupuesto</a>
-  </section>
+<header>
+  <div class="logo">CorteTexVid</div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="faq.html">Preguntas Frecuentes</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- SOBRE NOSOTROS -->
-  <section class="about" id="nosotros">
-    <h2>Sobre Nosotros</h2>
-    <p>
-      Somos una pequeña empresa familiar que ya va por la tercera generación. Desde 1982, en CorteTexVid nos dedicamos con pasión al corte textil. A diferencia de otras empresas, todo nuestro trabajo es manual y artesanal, ofreciendo un trato cercano y personalizado.
-    </p>
-  </section>
+<section class="hero" id="inicio">
+  <h2>Corte textil de precisión</h2>
+  <p>Especialistas en confección de ropa de baño y prendas a medida</p>
+  <p style="margin-top: 10px; font-weight: bold;">Trabajamos con tus telas. Entrega desde 2 días. Servicio profesional desde 1982.</p>
+  <a href="mailto:cortetexvid@gmail.com?subject=Presupuesto Corte Textil" class="btn">Solicita tu presupuesto</a>
+</section>
 
-  <!-- SERVICIOS -->
-  <section class="services" id="servicios">
-    <h2>Servicios</h2>
-    <p>Nos dedicamos exclusivamente al corte textil. Tú contactas con tu proveedor textil y nos envías los patrones y las telas. Nosotros realizamos el corte con maquinaria profesional y acabado manual. Aceptamos pedidos a partir de 5 unidades. Si son menos, también podemos hacerlo como muestra.</p>
-    <div class="etiquetas-servicio" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Bikinis</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Bañadores</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Camisetas</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Tops</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Sudaderas</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Pantalones</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Shorts</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Mallas</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Faldas</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Vestidos</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Ropa interior</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Pijamas</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Prendas personalizadas</span>
+<!-- Otras secciones (Nosotros, Servicios, Contacto, etc.) -->
+
+<footer>
+  <div>© 2025 CorteTexVid. Todos los derechos reservados.</div>
+  <div class="redes">
+    <div>
+      <strong>Email:</strong> <a href="mailto:cortetexvid@gmail.com">cortetexvid@gmail.com</a>
     </div>
-  </section>
+    <a href="https://instagram.com/cortetexvid" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5zm8.086 2.086a1.14 1.14 0 1 1 0 2.28 1.14 1.14 0 0 1 0-2.28zm-4.086 1.915a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@cortetexvid" target="_blank" aria-label="TikTok">
+      <svg viewBox="0 0 24 24"><path d="M12 2.04c.89 0 1.57.37 2.05.62v5.17a5.85 5.85 0 01-2.07-.39v7.88c0 2.5-2.22 4.52-4.91 4.52a4.94 4.94 0 01-4.81-4.04h2.02a2.86 2.86 0 002.79 2.02c1.6 0 2.89-1.2 2.89-2.68v-9.44a7.43 7.43 0 005.99 2.53v2.5a9.48 9.48 0 01-7.96-9.21 9.59 9.59 0 015.03 1.42z"/></svg>
+    </a>
+  </div>
+</footer>
 
-  <!-- FORMULARIO CONTACTO CON ARCHIVOS -->
-  <section id="contacto-form" style="margin-top: 1rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-    <h2 style="margin-bottom: 0.5rem;">Contacto y envío de archivos</h2>
-    <form id="contactForm" action="https://formspree.io/f/yourFormID" method="POST" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 0.5rem;">
-      <label for="nombre" style="margin-bottom: 0;">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required style="padding: 0.4rem;" />
+<button id="chat-toggle-btn">¿Tienes dudas?</button>
+<div id="chat-box">
+  <div id="chat-header">Nosotros te respondemos</div>
+  <div id="chat-window"></div>
+  <div id="chat-input-container">
+    <input type="text" id="chat-input" placeholder="Escribe tu pregunta..." autocomplete="off" />
+    <button id="send-btn">Enviar</button>
+  </div>
+</div>
 
-      <label for="email" style="margin-bottom: 0;">Correo electrónico:</label>
-      <input type="email" id="email" name="email" required style="padding: 0.4rem;" />
+<script>
+  const chatToggleBtn = document.getElementById('chat-toggle-btn');
+  const chatBox = document.getElementById('chat-box');
+  const chatWindow = document.getElementById('chat-window');
+  const chatInput = document.getElementById('chat-input');
+  const sendBtn = document.getElementById('send-btn');
 
-      <label for="mensaje" style="margin-bottom: 0;">Mensaje:</label>
-      <textarea id="mensaje" name="mensaje" rows="3" required style="padding: 0.4rem;"></textarea>
+  chatToggleBtn.addEventListener('click', () => {
+    if (chatBox.style.display === 'flex') {
+      chatBox.style.display = 'none';
+    } else {
+      chatBox.style.display = 'flex';
+      chatInput.focus();
+    }
+  });
 
-      <label for="archivo" style="margin-bottom: 0;">Adjuntar patrón o diseño (opcional):</label>
-      <input type="file" id="archivo" name="archivo" accept=".pdf,.jpg,.jpeg,.png,.svg" />
+  function addMessage(message, sender) {
+    const div = document.createElement('div');
+    div.style.marginBottom = '0.5rem';
+    div.style.padding = '0.5rem';
+    div.style.borderRadius = '12px';
+    div.style.maxWidth = '85%';
+    div.style.fontSize = '0.9rem';
+    if (sender === 'user') {
+      div.style.backgroundColor = '#003366';
+      div.style.color = 'white';
+      div.style.alignSelf = 'flex-end';
+      div.style.marginLeft = 'auto';
+    } else {
+      div.style.backgroundColor = '#e0e0e0';
+      div.style.color = 'black';
+      div.style.alignSelf = 'flex-start';
+      div.style.marginRight = 'auto';
+    }
+    div.innerHTML = message;
+    chatWindow.appendChild(div);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+  }
 
-      <button type="submit" style="background-color: #003366; color: white; padding: 0.5rem 1rem; border: none; border-radius: 6px; cursor: pointer; margin-top: 0.3rem;">Enviar</button>
-    </form>
-  </section>
+  function getResponse(text) {
+    text = text.toLowerCase();
+    if (text.includes('prenda') || text.includes('camiseta') || text.includes('pantalón') || text.includes('bikini') || text.includes('bañador') || text.includes('vestido') || text.includes('falda') || text.includes('ropa interior') || text.includes('pijama')) {
+      return "Cortamos todo tipo de prendas como camisetas, bikinis, bañadores, vestidos, pijamas, ropa interior, pantalones, faldas, etc.";
+    }
+    if (text.includes('tiempo') || text.includes('entrega') || text.includes('tardar')) {
+      return "El tiempo de entrega va de 2 días a 2 semanas, dependiendo del volumen del pedido.";
+    }
+    if (text.includes('precio') || text.includes('cuánto cuesta') || text.includes('coste')) {
+      return "Los precios dependen del tipo de prenda y cantidad. Para pedidos grandes hay descuento por volumen. Un bañador básico puede costar desde 1,60€.";
+    }
+    if (text.includes('mínimo') || text.includes('unidad') || text.includes('pedido')) {
+      return "Los pedidos empiezan a partir de 5 unidades. Para menos, lo tratamos como muestra.";
+    }
+    if (text.includes('tela') || text.includes('material')) {
+      return "Trabajamos con las telas que tú nos envías. Solo hacemos el corte, no proveemos el material.";
+    }
+    if (text.includes('cómo enviar') || text.includes('enviar patrón') || text.includes('cómo encargar')) {
+      return "Nos puedes enviar tus telas y patrones por mensajería. Contacta con nosotros por WhatsApp o correo para organizarlo.";
+    }
+    return `No tengo una respuesta exacta para eso, pero escríbenos por <a href='https://wa.me/34609565283' target='_blank'>WhatsApp</a> o al correo <a href='mailto:cortetexvid@gmail.com'>cortetexvid@gmail.com</a>.`;
+  }
 
-  <!-- LLAMADAS A LA ACCIÓN -->
-  <section class="cta-final" style="text-align: center; margin: 1.5rem 0;">
-    <h2>¿Quieres un presupuesto personalizado?</h2>
-    <p>Cuéntanos qué necesitas y te responderemos lo antes posible.</p>
-    <div style="margin-top: 1rem;">
-      <a href="https://wa.me/34609565283" class="btn" style="margin-right: 1rem; background-color: #25d366; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: bold;">📱 Escríbenos por WhatsApp</a>
-      <a href="mailto:cortetexvid@gmail.com?subject=Presupuesto%20Corte%20Textil&body=Hola%2C%20quiero%20realizar%20un%20pedido%20de%20corte%20textil%20con%20ustedes.%20Mis%20datos%20son..." class="btn" style="background-color: #003366; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: bold;">✉️ Envíanos un correo</a>
-    </div>
-  </section>
+  function sendMessage() {
+    const userInput = chatInput.value.trim();
+    if (!userInput) return;
+    addMessage(userInput, 'user');
+    chatInput.value = '';
+    const response = getResponse(userInput);
+    setTimeout(() => addMessage(response, 'bot'), 500);
+  }
 
-  <!-- CONTACTO -->
-  <section class="contact" id="contacto">
-    <h2>Contacto</h2>
-    <div class="contact-info">
-      <p><strong>Dirección:</strong> C/Salvador Dalí 19, Vidreres, Girona, España</p>
-      <p><strong>Teléfono:</strong> +34 609 565 283</p>
-      <p><strong>Email:</strong> cortetexvid@gmail.com</p>
-    </div>
-    <div style="margin-top: 2rem;">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.458991407659!2d2.754882315723967!3d41.783278679229446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12bae6c15d6421f1%3A0x3b6cf3e225155b38!2sCarrer%20Salvador%20Dal%C3%AD%2C%2019%2C%2017449%20Vidreres%2C%20Girona%2C%20Espa%C3%B1a!5e0!3m2!1ses!2ses!4v1687773931564!5m2!1ses!2ses" 
-        width="100%" 
-        height="300" 
-        style="border:0; border-radius: 12px;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-  </section>
+  sendBtn.addEventListener('click', sendMessage);
+  chatInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+</script>
 
-  <!-- FOOTER CON REDES SOCIALES -->
-  <footer style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #003366; color: white; font-size: 0.9rem;">
-    <div>© 2025 CorteTexVid. Todos los derechos reservados.</div>
-    <div style="display: flex; align-items: center; gap: 1rem;">
-      <div>
-        <strong>Email:</strong> <a href="mailto:cortetexvid@gmail.com" style="color: #ffcc00; text-decoration: none;">cortetexvid@gmail.com</a>
-      </div>
-      <div style="display: flex; gap: 0.8rem;">
-        <a href="https://instagram.com/cortetexvid" target="_blank" style="color: white; font-size: 1.4rem; text-decoration: none;" aria-label="Instagram">
-          <!-- Instagram SVG icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5
+</body>
+</html>
