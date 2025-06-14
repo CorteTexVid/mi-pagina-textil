@@ -53,45 +53,22 @@ header {
   text-decoration: underline;
 }
 
-/* Hero */
-.hero .btn {
+/* Hero con fondo base y hover con imagen */
+.hero {
   position: relative;
-  overflow: hidden;
-  transition: color 0.3s ease;
-  z-index: 0;
+  background: #003366 url('tu-imagen-de-fondo.jpg') no-repeat center center/cover;
+  color: white;
+  padding: 5rem 1rem;
+  text-align: center;
+  transition: background 0.5s ease;
+  border-radius: 12px;
 }
 
-.hero .btn:hover {
-  color: transparent;
+.hero:hover {
+  background: #003366 url('fondo-telas-optimizado.jpg') no-repeat center center/cover;
 }
 
-.hero .btn:hover::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120px; /* ajusta tamaño de la imagen */
-  height: 120px;
-  background: url('fondo-telas-optimizado.jpg') no-repeat center center;
-  background-size: contain;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-}
-}
-
-.hero h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.3rem;
-  margin-bottom: 0.7rem;
-}
-
+/* Botones */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -143,13 +120,6 @@ section {
   color: #003366;
   font-weight: 600;
   cursor: default;
-}
-
-.etiquetas-servicio span:hover {
-  background: url('ruta-a-tu-imagen-hover.png') no-repeat center center;
-  background-size: contain;
-  color: transparent;
-  cursor: pointer;
 }
 
 /* Contacto info */
@@ -272,3 +242,4 @@ body.dark-mode iframe,
 body.dark-mode video {
   filter: none !important;
 }
+
