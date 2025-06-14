@@ -41,18 +41,63 @@
     </p>
   </section>
 
-  <!-- CARRUSEL BÁSICO -->
-  <section class="carousel-container" style="max-width: 1000px; margin: 2rem auto; position: relative; overflow: hidden; border-radius: 12px;">
-    <div class="carousel-track" style="display: flex; transition: transform 0.5s ease;">
-      <img src="IMG_20250614_141925.jpg" alt="Maquinaria corte" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
-      <img src="IMG_20250614_142119.jpg" alt="Patrones" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
-      <img src="IMG_20250614_142025.jpg" alt="Tijeras" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
-      <img src="IMG_20250614_142037.jpg" alt="Trabajo manual" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
-    </div>
+ <!-- Carrusel simple -->
+<section class="carousel-container" style="max-width: 1000px; margin: 2rem auto; position: relative; overflow: hidden; border-radius: 12px;">
+  <div class="carousel-track" style="display: flex; transition: transform 0.5s ease;">
+    <img src="IMG_20250614_141925.jpg" alt="Maquinaria corte" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
+    <img src="IMG_20250614_142119.jpg" alt="Patrones" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
+    <img src="IMG_20250614_142025.jpg" alt="Tijeras" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
+    <img src="IMG_20250614_142037.jpg" alt="Trabajo manual" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
+  </div>
 
-    <button id="prevBtn" style="position: absolute; top: 50%; left: 15px; transform: translateY(-50%); background: rgba(0,0,0,0.3); border:none; border-radius: 50%; color: white; font-size: 2rem; cursor: pointer; width: 40px; height: 40px; z-index: 10;">&#10094;</button>
-    <button id="nextBtn" style="position: absolute; top: 50%; right: 15px; transform: translateY(-50%); background: rgba(0,0,0,0.3); border:none; border-radius: 50%; color: white; font-size: 2rem; cursor: pointer; width: 40px; height: 40px; z-index: 10;">&#10095;</button>
-  </section>
+  <button id="prevBtn" style="position: absolute; top: 50%; left: 15px; transform: translateY(-50%); background: rgba(0,0,0,0.3); border:none; border-radius: 50%; color: white; font-size: 2rem; cursor: pointer; width: 40px; height: 40px; z-index: 10;">&#10094;</button>
+  <button id="nextBtn" style="position: absolute; top: 50%; right: 15px; transform: translateY(-50%); background: rgba(0,0,0,0.3); border:none; border-radius: 50%; color: white; font-size: 2rem; cursor: pointer; width: 40px; height: 40px; z-index: 10;">&#10095;</button>
+</section>
+
+<script>
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let currentIndex = 0;
+
+  function updateSlidePosition() {
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    track.style.transform = 'translateX(' + (-slideWidth * currentIndex) + 'px)';
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+    updateSlidePosition();
+    resetInterval();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+    updateSlidePosition();
+    resetInterval();
+  });
+
+  // Autoplay
+  let autoPlayInterval = setInterval(() => {
+    currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+    updateSlidePosition();
+  }, 3500);
+
+  function resetInterval() {
+    clearInterval(autoPlayInterval);
+    autoPlayInterval = setInterval(() => {
+      currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+      updateSlidePosition();
+    }, 3500);
+  }
+
+  // Ajustar en resize
+  window.addEventListener('resize', updateSlidePosition);
+
+  // Posicionar inicial
+  updateSlidePosition();
+</script>
 
   <!-- SERVICIOS -->
   <section class="services" id="servicios">
