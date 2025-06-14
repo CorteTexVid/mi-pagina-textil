@@ -329,6 +329,28 @@ body.dark-mode #envio-archivos textarea {
   color: #000 !important;
 }
 
+#envio-archivos {
+  background-color: #000000 !important; /* fondo negro */
+  color: #ffffff !important; /* texto blanco */
+  border-radius: 12px;
+  padding: 2rem 1rem;
+}
+
+#envio-archivos label,
+#envio-archivos input,
+#envio-archivos textarea {
+  color: #ffffff !important;
+  background-color: transparent !important;
+  border: 1px solid #fff !important;
+}
+
+#envio-archivos input,
+#envio-archivos textarea {
+  background-color: #111111 !important; /* para inputs y textarea fondo negro oscuro */
+  border-radius: 6px;
+  padding: 0.5rem;
+}
+
 /* Evitar invertir imágenes en modo oscuro */
 body.dark-mode img,
 body.dark-mode iframe,
