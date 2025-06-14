@@ -283,6 +283,34 @@ body.dark-mode textarea {
   border: 1px solid #555 !important;
 }
 
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #222 !important;
+  color: #eee !important;
+  border: 1px solid #555 !important;
+}
+
+/* Estilo específico para la sección de envío de archivos */
+body.dark-mode #envio-archivos {
+  background-color: #121212;
+  color: #e0e0e0;
+  border-radius: 12px;
+  padding: 2rem 1rem;
+}
+
+body.dark-mode #envio-archivos input,
+body.dark-mode #envio-archivos textarea,
+body.dark-mode #envio-archivos label {
+  color: #e0e0e0;
+}
+
+body.dark-mode #envio-archivos input,
+body.dark-mode #envio-archivos textarea {
+  background-color: #222;
+  border: 1px solid #555;
+  color: #eee;
+}
+
 /* Evitar invertir imágenes en modo oscuro */
 body.dark-mode img,
 body.dark-mode iframe,
