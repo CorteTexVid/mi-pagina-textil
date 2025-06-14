@@ -174,21 +174,19 @@ footer {
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .carousel-track img {
-  width: 100%;
-  max-width: 400px;
+  width: 100% !important;
   flex-shrink: 0;
-  object-fit: cover;
-  height: 250px;
+  object-fit: cover !important;
+  height: 350px;
   user-select: none;
   pointer-events: none;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  margin: 0 !important;
 }
 
 /* Botones de flecha carrusel */
@@ -267,12 +265,4 @@ body.dark-mode img,
 body.dark-mode iframe,
 body.dark-mode video {
   filter: none !important;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .carousel-track img {
-    max-width: 250px;
-    height: 180px;
-  }
 }
