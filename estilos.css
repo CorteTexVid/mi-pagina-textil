@@ -166,47 +166,46 @@ footer {
 /* Carrusel */
 /* Puedes añadir más estilos aquí para el carrusel si quieres */
 
-/* ============================
-   MODO OSCURO (Dark Mode)
-   ============================ */
+/* Mejor contraste para modo oscuro */
 
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
+body.dark-mode a,
+body.dark-mode a:visited {
+  color: #ffd700; /* amarillo para links */
 }
 
-body.dark-mode header {
-  background-color: #1f1f1f;
-}
-
-body.dark-mode .hero,
-body.dark-mode .about,
-body.dark-mode .services,
-body.dark-mode .contact,
-body.dark-mode .cta-final {
-  background-color: #1a1a1a;
-  color: #e0e0e0;
-}
-
-body.dark-mode a.btn {
-  background-color: #444;
-  color: #fff;
-  transition: background-color 0.3s ease;
-}
-
-body.dark-mode a.btn:hover {
-  background-color: #666;
-}
-
-body.dark-mode input,
-body.dark-mode textarea {
-  background-color: #222;
-  color: #eee;
-  border: 1px solid #555;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-body.dark-mode #toggle-dark {
+body.dark-mode header .logo {
   color: #ffd700;
-  transition: color 0.3s ease;
 }
+
+body.dark-mode .etiquetas-servicio span {
+  background: #333;
+  color: #ffd700;
+  font-weight: 700;
+}
+
+body.dark-mode .contact-info p {
+  color: #ccc;
+}
+
+body.dark-mode iframe {
+  filter: brightness(0.8) contrast(1.1);
+  border-color: #444 !important;
+}
+
+body.dark-mode #chat-box {
+  background: #2a2a2a;
+  color: #eee;
+}
+
+body.dark-mode #chat-box div {
+  color: #eee;
+}
+
+body.dark-mode .btn {
+  box-shadow: 0 0 10px #222 inset;
+}
+
+body.dark-mode .btn:hover {
+  box-shadow: 0 0 15px #ffd700;
+}
+
