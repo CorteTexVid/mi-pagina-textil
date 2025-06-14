@@ -53,22 +53,24 @@ header {
   text-decoration: underline;
 }
 
-/* Hero con fondo base y hover con imagen */
+/* Hero */
 .hero {
-  position: relative;
-  background: #003366 url('tu-imagen-de-fondo.jpg') no-repeat center center/cover;
+  background: url('tu-imagen-de-fondo.jpg') no-repeat center center/cover;
   color: white;
   padding: 5rem 1rem;
   text-align: center;
-  transition: background 0.5s ease;
-  border-radius: 12px;
 }
 
-.hero:hover {
-  background: #003366 url('fondo-telas-optimizado.jpg') no-repeat center center/cover;
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
-/* Botones */
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+}
+
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -120,6 +122,13 @@ section {
   color: #003366;
   font-weight: 600;
   cursor: default;
+}
+
+.etiquetas-servicio span:hover {
+  background: url('ruta-a-tu-imagen-hover.png') no-repeat center center;
+  background-size: contain;
+  color: transparent;
+  cursor: pointer;
 }
 
 /* Contacto info */
