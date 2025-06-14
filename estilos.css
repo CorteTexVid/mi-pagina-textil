@@ -1,4 +1,4 @@
-/* ==== estilos.css basado en tu versión original ==== */
+/* ==== estilos.css completo ==== */
 
 /* Reset básico */
 * {
@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-/* Tipografía */
+/* Tipografía base */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fefefe;
@@ -171,7 +171,7 @@ footer {
   font-weight: 600;
 }
 
-/* Carrusel ajustes mínimos */
+/* Carrusel */
 .carousel-container {
   max-width: 1000px;
   margin: 2rem auto;
