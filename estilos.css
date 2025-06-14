@@ -54,11 +54,32 @@ header {
 }
 
 /* Hero */
-.hero {
-  background: url('tu-imagen-de-fondo.jpg') no-repeat center center/cover;
-  color: white;
-  padding: 5rem 1rem;
-  text-align: center;
+.hero .btn {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  z-index: 0;
+}
+
+.hero .btn:hover {
+  color: transparent;
+}
+
+.hero .btn:hover::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px; /* ajusta tamaño de la imagen */
+  height: 120px;
+  background: url('fondo-telas-optimizado.jpg') no-repeat center center;
+  background-size: contain;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
 }
 
 .hero h2 {
