@@ -316,3 +316,42 @@ footer {
     padding: 0.75rem 1.2rem;
   }
 }
+/* === MODO OSCURO === */
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode header {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .hero,
+body.dark-mode .about,
+body.dark-mode .services,
+body.dark-mode .contact,
+body.dark-mode .cta-final {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-mode a.btn {
+  background-color: #444;
+  color: #fff;
+}
+
+body.dark-mode a.btn:hover {
+  background-color: #666;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #222;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+body.dark-mode #toggle-dark {
+  color: #ffd700; /* amarillo para destacar */
+}
