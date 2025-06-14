@@ -1,4 +1,4 @@
-/* === estilos.css definitivo === */
+/* ==== estilos.css basado en tu versión original ==== */
 
 /* Reset básico */
 * {
@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-/* Tipografía base */
+/* Tipografía */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fefefe;
@@ -171,12 +171,12 @@ footer {
   font-weight: 600;
 }
 
-/* Carrusel */
+/* Carrusel ajustes mínimos */
 .carousel-container {
   max-width: 1000px;
   margin: 2rem auto;
   position: relative;
-  overflow: hidden !important; /* Oculta borde imagen siguiente */
+  overflow: hidden; /* Oculta borde imagen siguiente */
   border-radius: 12px;
 }
 
@@ -198,7 +198,7 @@ footer {
   margin: 0 !important;
 }
 
-/* Sección presupuesto a medida */
+/* Sección presupuesto */
 .cta-final {
   max-width: 1000px !important;
   margin: 2rem auto !important;
@@ -206,7 +206,7 @@ footer {
   text-align: center !important;
 }
 
-/* --- Modo oscuro visible y coherente --- */
+/* Modo oscuro visible y coherente */
 body.dark-mode {
   background-color: #121212 !important;
   color: #e0e0e0 !important;
@@ -245,7 +245,7 @@ body.dark-mode textarea {
   border: 1px solid #555 !important;
 }
 
-/* Evita invertir imágenes en modo oscuro */
+/* Evitar invertir imágenes en modo oscuro */
 body.dark-mode img,
 body.dark-mode iframe,
 body.dark-mode video {
