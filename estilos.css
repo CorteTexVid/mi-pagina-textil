@@ -1,3 +1,5 @@
+/* === estilos.css definitivo === */
+
 /* Reset básico */
 * {
   margin: 0;
@@ -174,59 +176,78 @@ footer {
   max-width: 1000px;
   margin: 2rem auto;
   position: relative;
-  overflow: hidden;
+  overflow: hidden !important; /* Oculta borde imagen siguiente */
   border-radius: 12px;
 }
 
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease;
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .carousel-track img {
-  width: 100%;
+  width: 100% !important;
   flex-shrink: 0;
-  object-fit: cover;
+  object-fit: cover !important;
   height: 350px;
   user-select: none;
   pointer-events: none;
-  margin: 0;
+  margin: 0 !important;
 }
 
 /* Sección presupuesto a medida */
 .cta-final {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  text-align: center;
+  max-width: 1000px !important;
+  margin: 2rem auto !important;
+  padding: 1.5rem !important;
+  text-align: center !important;
 }
 
-.cta-final div {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.cta-final a.btn {
-  flex: 1 1 200px;
-  max-width: 220px;
-}
-
-/* ============================
-   MODO OSCURO - INVERSIÓN TOTAL
-   ============================ */
-
+/* --- Modo oscuro visible y coherente --- */
 body.dark-mode {
-  filter: invert(1) hue-rotate(180deg);
-  background-color: #000 !important;
-  color: #fff !important;
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
 }
 
+body.dark-mode header,
+body.dark-mode .hero,
+body.dark-mode .about,
+body.dark-mode .services,
+body.dark-mode .contact,
+body.dark-mode .cta-final {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode a,
+body.dark-mode a:visited {
+  color: #ffd700 !important;
+}
+
+body.dark-mode a.btn {
+  background-color: #444 !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+body.dark-mode a.btn:hover {
+  background-color: #666 !important;
+  color: #ffd700 !important;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #222 !important;
+  color: #eee !important;
+  border: 1px solid #555 !important;
+}
+
+/* Evita invertir imágenes en modo oscuro */
 body.dark-mode img,
 body.dark-mode iframe,
 body.dark-mode video {
-  filter: invert(1) hue-rotate(180deg);
+  filter: none !important;
 }
