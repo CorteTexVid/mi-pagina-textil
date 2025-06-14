@@ -53,24 +53,22 @@ header {
   text-decoration: underline;
 }
 
-/* Hero */
+/* Hero con fondo base y hover con imagen */
 .hero {
-  background: url('tu-imagen-de-fondo.jpg') no-repeat center center/cover;
+  position: relative;
+  background: #003366; /* color base */
   color: white;
   padding: 5rem 1rem;
   text-align: center;
+  border-radius: 12px;
+  transition: background 0.5s ease;
 }
 
-.hero h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.hero:hover {
+  background: #003366 url('fondo-telas-optimizado.jpg') no-repeat center center/cover;
 }
 
-.hero p {
-  font-size: 1.3rem;
-  margin-bottom: 0.7rem;
-}
-
+/* Botones */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -122,13 +120,6 @@ section {
   color: #003366;
   font-weight: 600;
   cursor: default;
-}
-
-.etiquetas-servicio span:hover {
-  background: url('ruta-a-tu-imagen-hover.png') no-repeat center center;
-  background-size: contain;
-  color: transparent;
-  cursor: pointer;
 }
 
 /* Contacto info */
@@ -183,19 +174,45 @@ footer {
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease;
-  gap: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 .carousel-track img {
-  width: 100% !important;
+  width: 100%;
+  max-width: 400px;
   flex-shrink: 0;
-  object-fit: cover !important;
-  height: 350px;
+  object-fit: cover;
+  height: 250px;
   user-select: none;
   pointer-events: none;
-  margin: 0 !important;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Botones de flecha carrusel */
+#prevBtn, #nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,51,102,0.8);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+}
+
+#prevBtn {
+  left: 10px;
+}
+
+#nextBtn {
+  right: 10px;
 }
 
 /* Sección presupuesto */
@@ -250,4 +267,12 @@ body.dark-mode img,
 body.dark-mode iframe,
 body.dark-mode video {
   filter: none !important;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .carousel-track img {
+    max-width: 250px;
+    height: 180px;
+  }
 }
