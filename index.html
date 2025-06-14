@@ -41,23 +41,17 @@
     </p>
   </section>
 
-  <!-- CARRUSEL DE IMÁGENES -->
-  <section class="carousel-container" style="max-width: 1200px; margin: 2rem auto; position: relative; overflow: hidden; border-radius: 12px;">
+  <!-- CARRUSEL BÁSICO -->
+  <section class="carousel-container" style="max-width: 1000px; margin: 2rem auto; position: relative; overflow: hidden; border-radius: 12px;">
     <div class="carousel-track" style="display: flex; transition: transform 0.5s ease;">
-      <img src="IMG_20250614_141925.jpg" alt="Maquinaria para corte textil profesional" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
-      <img src="IMG_20250614_142119.jpg" alt="Patrones de corte artesanal" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
-      <img src="IMG_20250614_142025.jpg" alt="Tijeras para corte textil artesanal" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
-      <img src="IMG_20250614_142037.jpg" alt="Trabajo manual con patrones" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
-      <img src="IMG_20250614_142340.jpg" alt="Rollos de telas para corte profesional" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
-      <img src="IMG_20250614_142051.jpg" alt="Detalle de patrón para confección textil" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
+      <img src="IMG_20250614_141925.jpg" alt="Maquinaria corte" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
+      <img src="IMG_20250614_142119.jpg" alt="Patrones" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
+      <img src="IMG_20250614_142025.jpg" alt="Tijeras" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
+      <img src="IMG_20250614_142037.jpg" alt="Trabajo manual" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
     </div>
 
-    <!-- Flechas -->
-    <button class="carousel-btn prev" aria-label="Imagen anterior" style="position: absolute; top: 50%; left: 15px; transform: translateY(-50%); background: rgba(0,0,0,0.3); border:none; border-radius: 50%; color: white; font-size: 2rem; cursor: pointer; width: 40px; height: 40px; z-index: 10;">&#10094;</button>
-    <button class="carousel-btn next" aria-label="Imagen siguiente" style="position: absolute; top: 50%; right: 15px; transform: translateY(-50%); background: rgba(0,0,0,0.3); border:none; border-radius: 50%; color: white; font-size: 2rem; cursor: pointer; width: 40px; height: 40px; z-index: 10;">&#10095;</button>
-
-    <!-- Puntos indicadores -->
-    <div class="carousel-dots" style="text-align: center; margin-top: 10px;"></div>
+    <button id="prevBtn" style="position: absolute; top: 50%; left: 15px; transform: translateY(-50%); background: rgba(0,0,0,0.3); border:none; border-radius: 50%; color: white; font-size: 2rem; cursor: pointer; width: 40px; height: 40px; z-index: 10;">&#10094;</button>
+    <button id="nextBtn" style="position: absolute; top: 50%; right: 15px; transform: translateY(-50%); background: rgba(0,0,0,0.3); border:none; border-radius: 50%; color: white; font-size: 2rem; cursor: pointer; width: 40px; height: 40px; z-index: 10;">&#10095;</button>
   </section>
 
   <!-- SERVICIOS -->
@@ -195,45 +189,4 @@
       burbuja.style.padding = '0.5rem';
       burbuja.style.borderRadius = '12px';
       burbuja.style.maxWidth = '85%';
-      burbuja.style.fontSize = '0.9rem';
-      burbuja.innerHTML = texto;
-      ventana.appendChild(burbuja);
-      ventana.scrollTop = ventana.scrollHeight;
-    }
-  </script>
-
-  <!-- Script Carrusel -->
-  <script>
-    (function() {
-      const track = document.querySelector('.carousel-track');
-      const slides = Array.from(track.children);
-      const prevBtn = document.querySelector('.carousel-btn.prev');
-      const nextBtn = document.querySelector('.carousel-btn.next');
-      const dotsNav = document.querySelector('.carousel-dots');
-
-      let currentIndex = 0;
-      let slideWidth = slides[0].getBoundingClientRect().width;
-      let autoPlayInterval;
-
-      function setSlidePositions() {
-        slideWidth = slides[0].getBoundingClientRect().width;
-        slides.forEach((slide, index) => {
-          slide.style.left = slideWidth * index + 'px';
-        });
-      }
-      setSlidePositions();
-      window.addEventListener('resize', setSlidePositions);
-
-      // Crear puntos indicadores
-      slides.forEach((_, index) => {
-        const dot = document.createElement('button');
-        dot.classList.add('dot');
-        dot.style.width = '12px';
-        dot.style.height = '12px';
-        dot.style.margin = '0 5px';
-        dot.style.borderRadius = '50%';
-        dot.style.border = 'none';
-        dot.style.background = index === 0 ? '#003366' : '#ccc';
-        dot.style.cursor = 'pointer';
-        dot.setAttribute('aria-label', `Slide ${index + 1}`);
-        dotsNav.appendChild(dot
+      burbuja.style.font
