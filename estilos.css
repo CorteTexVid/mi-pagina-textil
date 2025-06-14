@@ -166,46 +166,49 @@ footer {
 /* Carrusel */
 /* Puedes añadir más estilos aquí para el carrusel si quieres */
 
-/* Mejor contraste para modo oscuro */
+/* Mejor contraste modo oscuro ampliado */
 
 body.dark-mode a,
 body.dark-mode a:visited {
-  color: #ffd700; /* amarillo para links */
+  color: #ffd700 !important; /* amarillo */
+  text-decoration: underline;
 }
 
 body.dark-mode header .logo {
-  color: #ffd700;
+  color: #ffd700 !important;
 }
 
 body.dark-mode .etiquetas-servicio span {
-  background: #333;
-  color: #ffd700;
+  background: #333 !important;
+  color: #ffd700 !important;
   font-weight: 700;
 }
 
 body.dark-mode .contact-info p {
-  color: #ccc;
+  color: #ccc !important;
 }
 
 body.dark-mode iframe {
-  filter: brightness(0.8) contrast(1.1);
+  filter: brightness(0.7) contrast(1.2) !important;
   border-color: #444 !important;
 }
 
 body.dark-mode #chat-box {
-  background: #2a2a2a;
-  color: #eee;
+  background: #2a2a2a !important;
+  color: #eee !important;
 }
 
 body.dark-mode #chat-box div {
-  color: #eee;
+  color: #eee !important;
 }
 
 body.dark-mode .btn {
-  box-shadow: 0 0 10px #222 inset;
+  box-shadow: 0 0 10px #222 inset !important;
+  border: none !important;
 }
 
 body.dark-mode .btn:hover {
-  box-shadow: 0 0 15px #ffd700;
+  box-shadow: 0 0 15px #ffd700 !important;
+  background-color: #555 !important;
+  color: #ffd700 !important;
 }
-
