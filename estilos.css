@@ -176,8 +176,10 @@ footer {
   margin: 2rem auto;
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 0; /* sin bordes redondeados */
+  padding: 0; /* sin padding */
 }
+
 
 .carousel-track {
   display: flex;
@@ -194,8 +196,11 @@ footer {
   height: 350px;
   user-select: none;
   pointer-events: none;
-  margin: 0 !important;
+  margin: 0 !important; /* elimina margen */
+  border-radius: 0 !important; /* elimina bordes redondeados */
+  box-shadow: none !important; /* elimina sombra si hay */
 }
+
 
 /* Botones de flecha carrusel */
 #prevBtn, #nextBtn {
