@@ -47,18 +47,18 @@
   </section>
 
   <!-- CARRUSEL CON 6 IMÁGENES -->
-  <section class="carousel-container" style="max-width: 1000px; margin: 2rem auto; position: relative; overflow: hidden; border-radius: 12px;">
-    <div class="carousel-track" style="display: flex; transition: transform 0.5s ease;">
-      <img src="IMG_20250614_141925.jpg" alt="Maquinaria corte" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
-      <img src="IMG_20250614_142119.jpg" alt="Patrones" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
-      <img src="IMG_20250614_142025.jpg" alt="Tijeras" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
-      <img src="IMG_20250614_142037.jpg" alt="Trabajo manual" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
-      <img src="IMG_20250614_142340.jpg" alt="Rollos de telas" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
-      <img src="IMG_20250614_142051.jpg" alt="Detalle patrón" style="width: 100%; flex-shrink: 0; object-fit: cover; height: 350px;" />
+  <section class="carousel-container">
+    <div class="carousel-track">
+      <img src="IMG_20250614_141925.jpg" alt="Maquinaria corte" />
+      <img src="IMG_20250614_142119.jpg" alt="Patrones" />
+      <img src="IMG_20250614_142025.jpg" alt="Tijeras" />
+      <img src="IMG_20250614_142037.jpg" alt="Trabajo manual" />
+      <img src="IMG_20250614_142340.jpg" alt="Rollos de telas" />
+      <img src="IMG_20250614_142051.jpg" alt="Detalle patrón" />
     </div>
 
-    <button id="prevBtn" style="position: absolute; top: 50%; left: 15px; transform: translateY(-50%); background: rgba(0,0,0,0.3); border:none; border-radius: 50%; color: white; font-size: 2rem; cursor: pointer; width: 40px; height: 40px; z-index: 10;">&#10094;</button>
-    <button id="nextBtn" style="position: absolute; top: 50%; right: 15px; transform: translateY(-50%); background: rgba(0,0,0,0.3); border:none; border-radius: 50%; color: white; font-size: 2rem; cursor: pointer; width: 40px; height: 40px; z-index: 10;">&#10095;</button>
+    <button id="prevBtn">&#10094;</button>
+    <button id="nextBtn">&#10095;</button>
   </section>
 
   <!-- SERVICIOS -->
@@ -70,51 +70,51 @@
     <p>
       Aceptamos pedidos desde 5 unidades y también muestras para cantidades menores.
     </p>
-    <div class="etiquetas-servicio" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Bikinis</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Bañadores</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Camisetas</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Pantalones</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Vestidos</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Ropa interior</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Sudaderas</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Shorts</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Mallas</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Faldas</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Pijamas</span>
-      <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px;">Prendas personalizadas</span>
+    <div class="etiquetas-servicio">
+      <span>Bikinis</span>
+      <span>Bañadores</span>
+      <span>Camisetas</span>
+      <span>Pantalones</span>
+      <span>Vestidos</span>
+      <span>Ropa interior</span>
+      <span>Sudaderas</span>
+      <span>Shorts</span>
+      <span>Mallas</span>
+      <span>Faldas</span>
+      <span>Pijamas</span>
+      <span>Prendas personalizadas</span>
     </div>
   </section>
 
   <!-- FORMULARIO CONTACTO CON ARCHIVOS -->
-  <section id="contacto-form" style="margin-top: 1rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-    <h2 style="margin-bottom: 0.5rem;">Contacto y envío de archivos</h2>
-    <form id="contactForm" action="https://formspree.io/f/yourFormID" method="POST" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 0.5rem;">
-      <label for="nombre" style="margin-bottom: 0;">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required style="padding: 0.4rem;" />
+  <section id="contacto-form">
+    <h2>Contacto y envío de archivos</h2>
+    <form id="contactForm" action="https://formspree.io/f/yourFormID" method="POST" enctype="multipart/form-data">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required />
 
-      <label for="email" style="margin-bottom: 0;">Correo electrónico:</label>
-      <input type="email" id="email" name="email" required style="padding: 0.4rem;" />
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required />
 
-      <label for="mensaje" style="margin-bottom: 0;">Mensaje:</label>
-      <textarea id="mensaje" name="mensaje" rows="3" required style="padding: 0.4rem;"></textarea>
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="3" required></textarea>
 
-      <label for="archivo" style="margin-bottom: 0;">Adjuntar patrón o diseño (opcional):</label>
+      <label for="archivo">Adjuntar patrón o diseño (opcional):</label>
       <input type="file" id="archivo" name="archivo" accept=".pdf,.jpg,.jpeg,.png,.svg" />
 
-      <button type="submit" style="background-color: #003366; color: white; padding: 0.5rem 1rem; border: none; border-radius: 6px; cursor: pointer; margin-top: 0.3rem;">Enviar</button>
+      <button type="submit">Enviar</button>
     </form>
   </section>
 
   <!-- LLAMADAS A LA ACCIÓN -->
-  <section class="cta-final" style="text-align: center; margin: 1.5rem 0;">
+  <section class="cta-final">
     <h2>¿Quieres un presupuesto a medida?</h2>
     <p>Cuéntanos tus necesidades, cantidades y tipo de prendas, y te responderemos rápidamente con la mejor solución para ti.</p>
-    <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-      <a href="https://wa.me/34609565283" class="btn" style="background-color: #25d366; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; text-decoration: none;">📱 WhatsApp</a>
-      <a href="mailto:cortetexvid@gmail.com?subject=Presupuesto%20Corte%20Textil&body=Hola%2C%20quiero%20realizar%20un%20pedido%20de%20corte%20textil%20con%20ustedes.%20Mis%20datos%20son..." class="btn" style="background-color: #003366; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; text-decoration: none;">✉️ Correo</a>
-      <a href="https://instagram.com/cortetexvid" target="_blank" class="btn" style="background-color: #E1306C; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; text-decoration: none;">📸 Instagram</a>
-      <a href="https://www.tiktok.com/@cortetexvid" target="_blank" class="btn" style="background-color: #010101; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold; text-decoration: none;">🎵 TikTok</a>
+    <div>
+      <a href="https://wa.me/34609565283" class="btn">📱 WhatsApp</a>
+      <a href="mailto:cortetexvid@gmail.com?subject=Presupuesto%20Corte%20Textil" class="btn">✉️ Correo</a>
+      <a href="https://instagram.com/cortetexvid" target="_blank" class="btn">📸 Instagram</a>
+      <a href="https://www.tiktok.com/@cortetexvid" target="_blank" class="btn">🎵 TikTok</a>
     </div>
   </section>
 
@@ -127,17 +127,15 @@
       <p><strong>Email:</strong> cortetexvid@gmail.com</p>
     </div>
     
-    <div style="margin-top: 2rem;">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.458991407659!2d2.754882315723967!3d41.783278679229446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12bae6c15d6421f1%3A0x3b6cf3e225155b38!2sCarrer%20Salvador%20Dal%C3%AD%2C%2019%2C%2017449%20Vidreres%2C%20Girona%2C%20España!5e0!3m2!1ses!2ses!4v1687773931564!5m2!1ses!2ses" 
-        width="100%" 
-        height="300" 
-        style="border:0; border-radius: 12px;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.458991407659!2d2.754882315723967!3d41.783278679229446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12bae6c15d6421f1%3A0x3b6cf3e225155b38!2sCarrer%20Salvador%20Dal%C3%AD%2C%2019%2C%2017449%20Vidreres%2C%20Girona%2C%20España!5e0!3m2!1ses!2ses!4v1687773931564!5m2!1ses!2ses" 
+      width="100%" 
+      height="300" 
+      style="border:0; border-radius: 12px;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
   </section>
 
   <!-- BOT FLOTANTE -->
@@ -203,7 +201,6 @@
     }
   </script>
 
-  <!-- Script carrusel -->
   <script>
     const track = document.querySelector('.carousel-track');
     const slides = Array.from(track.children);
@@ -246,7 +243,6 @@
     updateSlidePosition();
   </script>
 
-  <!-- Script modo oscuro -->
   <script>
     const toggleBtn = document.getElementById('toggle-dark');
     const body = document.body;
