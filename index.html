@@ -1,267 +1,244 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Corte textil artesanal y profesional en Vidreres. Especialistas en bikinis, bañadores, camisetas y prendas a medida con más de 40 años de experiencia." />
-  <meta name="keywords" content="corte textil, corte artesanal, bikinis, bañadores, prendas a medida, corte profesional, Vidreres, confección textil" />
-  <meta name="author" content="CorteTexVid" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CorteTexVid | Corte Textil Artesanal en Vidreres</title>
-  <link rel="stylesheet" href="estilos.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-</head>
-<body>
-  <header>
-    <div class="logo">CorteTexVid</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="faq.html">Preguntas Frecuentes</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li>
-          <button id="toggle-dark" aria-label="Cambiar modo oscuro" style="background:none; border:none; color:white; cursor:pointer; font-size:1.2rem; padding:0 10px;">
-            🌙
-          </button>
-        </li>
-      </ul>
-    </nav>
-  </header>
+/* ==== estilos.css completo ==== */
 
-  <!-- HERO / INICIO -->
-  <section class="hero" id="inicio">
-    <h2>Corte textil artesanal y profesional en Vidreres</h2>
-    <p>Especialistas en el corte preciso de bikinis, bañadores, camisetas y prendas a medida.</p>
-    <p>Trabajamos con tus telas y entregamos tu pedido en un plazo de 2 días a 2 semanas.</p>
-    <p>Más de 40 años de experiencia familiar desde 1982.</p>
-    <a href="mailto:cortetexvid@gmail.com?subject=Presupuesto Corte Textil" class="btn">Solicita tu presupuesto</a>
-  </section>
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- SOBRE NOSOTROS -->
-  <section class="about" id="nosotros">
-    <h2>Sobre Nosotros</h2>
-    <p>
-      Somos una empresa familiar con tres generaciones dedicadas al corte textil artesanal. Desde 1982, en CorteTexVid combinamos maquinaria profesional con acabados manuales para ofrecerte calidad, precisión y un trato cercano que solo la experiencia familiar puede brindar.
-    </p>
-  </section>
+/* Tipografía base */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fefefe;
+  color: #222;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  <!-- CARRUSEL CON 6 IMÁGENES -->
-  <section class="carousel-container">
-    <div class="carousel-track">
-      <img src="IMG_20250614_141925.jpg" alt="Maquinaria corte" />
-      <img src="IMG_20250614_142119.jpg" alt="Patrones" />
-      <img src="IMG_20250614_142025.jpg" alt="Tijeras" />
-      <img src="IMG_20250614_142037.jpg" alt="Trabajo manual" />
-      <img src="IMG_20250614_142340.jpg" alt="Rollos de telas" />
-      <img src="IMG_20250614_142051.jpg" alt="Detalle patrón" />
-    </div>
+/* Header */
+header {
+  background-color: #003366;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    <button id="prevBtn">&#10094;</button>
-    <button id="nextBtn">&#10095;</button>
-  </section>
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
 
-  <!-- SERVICIOS -->
-  <section class="services" id="servicios">
-    <h2>Servicios</h2>
-    <p>
-      Ofrecemos un servicio especializado de corte textil en Vidreres, adaptado a tus necesidades. Tú gestionas los patrones y las telas con tu proveedor, y nosotros realizamos el corte con maquinaria avanzada y acabado artesanal. Trabajamos con todo tipo de prendas: bikinis, bañadores, camisetas, pantalones, vestidos, ropa interior y más.
-    </p>
-    <p>
-      Aceptamos pedidos desde 5 unidades y también muestras para cantidades menores.
-    </p>
-    <div class="etiquetas-servicio">
-      <span>Bikinis</span>
-      <span>Bañadores</span>
-      <span>Camisetas</span>
-      <span>Pantalones</span>
-      <span>Vestidos</span>
-      <span>Ropa interior</span>
-      <span>Sudaderas</span>
-      <span>Shorts</span>
-      <span>Mallas</span>
-      <span>Faldas</span>
-      <span>Pijamas</span>
-      <span>Prendas personalizadas</span>
-    </div>
-  </section>
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
 
-  <!-- FORMULARIO CONTACTO CON ARCHIVOS -->
-  <section id="contacto-form">
-    <h2>Contacto y envío de archivos</h2>
-    <form id="contactForm" action="https://formspree.io/f/yourFormID" method="POST" enctype="multipart/form-data">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required />
+.nav-links li a,
+.nav-links li button {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1rem;
+}
 
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="email" required />
+.nav-links li button:hover,
+.nav-links li a:hover {
+  text-decoration: underline;
+}
 
-      <label for="mensaje">Mensaje:</label>
-      <textarea id="mensaje" name="mensaje" rows="3" required></textarea>
+/* Hero con fondo base y hover con imagen */
+.hero {
+  position: relative;
+  background: #003366 url('tu-imagen-de-fondo.jpg') no-repeat center center/cover;
+  color: white;
+  padding: 5rem 1rem;
+  text-align: center;
+  transition: background 0.5s ease;
+  border-radius: 12px;
+}
 
-      <label for="archivo">Adjuntar patrón o diseño (opcional):</label>
-      <input type="file" id="archivo" name="archivo" accept=".pdf,.jpg,.jpeg,.png,.svg" />
+.hero:hover {
+  background: #003366 url('fondo-telas-optimizado.jpg') no-repeat center center/cover;
+}
 
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #ffcc00;
+  color: #003366;
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
 
-  <!-- LLAMADAS A LA ACCIÓN -->
-  <section class="cta-final">
-    <h2>¿Quieres un presupuesto a medida?</h2>
-    <p>Cuéntanos tus necesidades, cantidades y tipo de prendas, y te responderemos rápidamente con la mejor solución para ti.</p>
-    <div>
-      <a href="https://wa.me/34609565283" class="btn">📱 WhatsApp</a>
-      <a href="mailto:cortetexvid@gmail.com?subject=Presupuesto%20Corte%20Textil" class="btn">✉️ Correo</a>
-      <a href="https://instagram.com/cortetexvid" target="_blank" class="btn">📸 Instagram</a>
-      <a href="https://www.tiktok.com/@cortetexvid" target="_blank" class="btn">🎵 TikTok</a>
-    </div>
-  </section>
+.btn:hover {
+  background-color: #e6b800;
+}
 
-  <!-- CONTACTO -->
-  <section class="contact" id="contacto">
-    <h2>Contacto</h2>
-    <div class="contact-info">
-      <p><strong>Dirección:</strong> C/Salvador Dalí 19, Vidreres, Girona, España</p>
-      <p><strong>Teléfono:</strong> +34 609 565 283</p>
-      <p><strong>Email:</strong> cortetexvid@gmail.com</p>
-    </div>
-    
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.458991407659!2d2.754882315723967!3d41.783278679229446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12bae6c15d6421f1%3A0x3b6cf3e225155b38!2sCarrer%20Salvador%20Dal%C3%AD%2C%2019%2C%2017449%20Vidreres%2C%20Girona%2C%20España!5e0!3m2!1ses!2ses!4v1687773931564!5m2!1ses!2ses" 
-      width="100%" 
-      height="300" 
-      style="border:0; border-radius: 12px;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </section>
+/* Secciones comunes */
+section {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
 
-  <!-- BOT FLOTANTE -->
-  <div id="chat-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
-    <button onclick="abrirChat()" style="background-color: #003366; color: white; border: none; padding: 0.75rem 1rem; border-radius: 50px; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-      ¿Tienes dudas?
-    </button>
-    <div id="chat-box" style="display: none; position: absolute; bottom: 60px; right: 0; width: 300px; background: white; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-      <div style="padding: 1rem; border-bottom: 1px solid #eee; font-weight: bold; background: #003366; color: white; border-top-left-radius: 10px; border-top-right-radius: 10px;">CorteTexVid</div>
-      <div id="chatVentanaMini" style="height: 200px; overflow-y: auto; padding: 1rem; font-size: 0.9rem;"></div>
-      <div style="display: flex; border-top: 1px solid #eee;">
-        <input type="text" id="miniPregunta" placeholder="Escribe tu pregunta..." style="flex: 1; border: none; padding: 0.5rem; font-size: 0.9rem;">
-        <button onclick="responderMini()" style="background: #ffcc00; border: none; padding: 0.5rem 1rem; font-weight: bold; cursor: pointer;">Enviar</button>
-      </div>
-    </div>
-  </div>
+.about h2,
+.services h2,
+.contact h2,
+.cta-final h2 {
+  margin-bottom: 1rem;
+  color: #003366;
+}
 
-  <script>
-    function abrirChat() {
-      const box = document.getElementById('chat-box');
-      box.style.display = box.style.display === 'none' ? 'block' : 'none';
-    }
+/* Servicios - etiquetas */
+.etiquetas-servicio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
 
-    function responderMini() {
-      const entrada = document.getElementById("miniPregunta");
-      const texto = entrada.value.trim().toLowerCase();
-      if (!texto) return;
-      agregarBurbujaMini(entrada.value, "user");
-      entrada.value = "";
+.etiquetas-servicio span {
+  background: #e6e6e6;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  color: #003366;
+  font-weight: 600;
+  cursor: default;
+}
 
-      let respuesta = `No tengo una respuesta exacta para eso, pero escríbenos por <a href='https://wa.me/34609565283' target='_blank'>WhatsApp</a> o al correo <a href='mailto:cortetexvid@gmail.com'>cortetexvid@gmail.com</a>.`;
+/* Contacto info */
+.contact-info p {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
 
-      if (texto.includes("prenda") || texto.includes("camiseta") || texto.includes("pantalón") || texto.includes("bikini") || texto.includes("bañador") || texto.includes("vestido") || texto.includes("falda") || texto.includes("ropa interior") || texto.includes("pijama")) {
-        respuesta = "Cortamos todo tipo de prendas como camisetas, bikinis, bañadores, vestidos, pijamas, ropa interior, pantalones, faldas, etc.";
-      } else if (texto.includes("tiempo") || texto.includes("entrega") || texto.includes("tardar")) {
-        respuesta = "El tiempo de entrega va de 2 días a 2 semanas, dependiendo del volumen del pedido.";
-      } else if (texto.includes("precio") || texto.includes("cuánto cuesta") || texto.includes("coste")) {
-        respuesta = "Los precios dependen del tipo de prenda y cantidad. Para pedidos grandes hay descuento por volumen. Un bañador básico puede costar desde 1,60€.";
-      } else if (texto.includes("mínimo") || texto.includes("unidad") || texto.includes("pedido")) {
-        respuesta = "Los pedidos empiezan a partir de 5 unidades. Para menos, lo tratamos como muestra.";
-      } else if (texto.includes("tela") || texto.includes("material")) {
-        respuesta = "Trabajamos con las telas que tú nos envías. Solo hacemos el corte, no proveemos el material.";
-      } else if (texto.includes("cómo enviar") || texto.includes("enviar patrón") || texto.includes("cómo encargar")) {
-        respuesta = "Nos puedes enviar tus telas y patrones por mensajería. Contacta con nosotros por WhatsApp o correo para organizarlo.";
-      }
+/* Formulario contacto */
+#contacto-form form label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  display: block;
+}
 
-      setTimeout(() => agregarBurbujaMini(respuesta, "bot"), 500);
-    }
+#contacto-form input,
+#contacto-form textarea,
+#contacto-form input[type="file"] {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+}
 
-    function agregarBurbujaMini(texto, tipo) {
-      const ventana = document.getElementById("chatVentanaMini");
-      const burbuja = document.createElement("div");
-      burbuja.style.marginBottom = '0.5rem';
-      burbuja.style.background = tipo === 'user' ? '#003366' : '#e0e0e0';
-      burbuja.style.color = tipo === 'user' ? 'white' : 'black';
-      burbuja.style.padding = '0.5rem';
-      burbuja.style.borderRadius = '12px';
-      burbuja.style.maxWidth = '85%';
-      burbuja.style.fontSize = '0.9rem';
-      burbuja.innerHTML = texto;
-      ventana.appendChild(burbuja);
-      ventana.scrollTop = ventana.scrollHeight;
-    }
-  </script>
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #003366;
+  color: white;
+  font-size: 0.9rem;
+}
 
-  <script>
-    const track = document.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    let currentIndex = 0;
+/* Bot flotante */
+#chat-widget button {
+  font-weight: 600;
+}
 
-    function updateSlidePosition() {
-      const slideWidth = slides[0].getBoundingClientRect().width;
-      track.style.transform = 'translateX(' + (-slideWidth * currentIndex) + 'px)';
-    }
+/* Carrusel */
+.carousel-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
 
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
-      updateSlidePosition();
-      resetInterval();
-    });
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
-      updateSlidePosition();
-      resetInterval();
-    });
+.carousel-track img {
+  width: 100% !important;
+  flex-shrink: 0;
+  object-fit: cover !important;
+  height: 350px;
+  user-select: none;
+  pointer-events: none;
+  margin: 0 !important;
+}
 
-    let autoPlayInterval = setInterval(() => {
-      currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
-      updateSlidePosition();
-    }, 3500);
+/* Sección presupuesto */
+.cta-final {
+  max-width: 1000px !important;
+  margin: 2rem auto !important;
+  padding: 1.5rem !important;
+  text-align: center !important;
+}
 
-    function resetInterval() {
-      clearInterval(autoPlayInterval);
-      autoPlayInterval = setInterval(() => {
-        currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
-        updateSlidePosition();
-      }, 3500);
-    }
+/* Modo oscuro visible y coherente */
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
 
-    window.addEventListener('resize', updateSlidePosition);
+body.dark-mode header,
+body.dark-mode .hero,
+body.dark-mode .about,
+body.dark-mode .services,
+body.dark-mode .contact,
+body.dark-mode .cta-final {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+}
 
-    updateSlidePosition();
-  </script>
+body.dark-mode a,
+body.dark-mode a:visited {
+  color: #ffd700 !important;
+}
 
-  <script>
-    const toggleBtn = document.getElementById('toggle-dark');
-    const body = document.body;
+body.dark-mode a.btn {
+  background-color: #444 !important;
+  color: #fff !important;
+  border: none !important;
+}
 
-    if(localStorage.getItem('dark-mode') === 'enabled'){
-      body.classList.add('dark-mode');
-      toggleBtn.textContent = '☀️';
-    }
+body.dark-mode a.btn:hover {
+  background-color: #666 !important;
+  color: #ffd700 !important;
+}
 
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      if(body.classList.contains('dark-mode')){
-        localStorage.setItem('dark-mode', 'enabled');
-        toggleBtn.textContent = '☀️';
-      } else {
-        localStorage.setItem('dark-mode', 'disabled');
-        toggleBtn.textContent = '🌙';
-      }
-    });
-  </script>
-</body>
-</html>
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #222 !important;
+  color: #eee !important;
+  border: 1px solid #555 !important;
+}
+
+/* Evitar invertir imágenes en modo oscuro */
+body.dark-mode img,
+body.dark-mode iframe,
+body.dark-mode video {
+  filter: none !important;
+}
