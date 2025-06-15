@@ -288,5 +288,19 @@
   <p>© 2025 CorteTexVid. Todos los derechos reservados.</p>
 </footer>
 
+  <script>
+  function redirigirTrasEnviar() {
+    setTimeout(() => {
+      const quiereGuia = document.querySelector('input[name="desea_guia"]').checked;
+      if (quiereGuia) {
+        window.location.href = "gracias.html";
+      } else {
+        alert("¡Gracias por tu mensaje! Te responderemos pronto.");
+      }
+    }, 100);
+    return true;
+  }
+</script>
+
 </body>
 </html>
