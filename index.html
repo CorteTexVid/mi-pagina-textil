@@ -88,8 +88,29 @@
 
   <!-- FORMULARIO CONTACTO CON ARCHIVOS -->
   <section id="contacto-form">
-    <h2>Envíanos tu petición</h2>
-    <form id="contactForm" action="https://formspree.io/f/yourFormID" method="POST" enctype="multipart/form-data">
+  <h2>Contacto y envío de archivos</h2>
+  <form id="contactForm" action="https://formspree.io/f/yourFormID" method="POST" enctype="multipart/form-data" onsubmit="return redirigirTrasEnviar();">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required />
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" rows="3" required></textarea>
+
+    <label for="archivo">Adjuntar patrón o diseño (opcional):</label>
+    <input type="file" id="archivo" name="archivo" accept=".pdf,.jpg,.jpeg,.png,.svg" />
+
+    <label style="margin: 1rem 0; display: inline-block;">
+      <input type="checkbox" name="desea_guia" value="sí" />
+      Quiero recibir la guía gratuita para preparar mis patrones
+    </label>
+
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
       <label for="nombre">Nombre:</label>
       <input type="text" id="nombre" name="nombre" required />
 
